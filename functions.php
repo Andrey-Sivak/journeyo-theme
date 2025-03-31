@@ -5,13 +5,13 @@
  * This file sets up the theme by registering features, enqueuing assets, and defining
  * utility functions. It is loaded automatically by WordPress on every page load.
  *
- * @package Journeyo
+ * @package journeyo
  */
  
 declare(strict_types=1);
 
 /**
- * The Journeyo functions and definitions
+ * The journeyo functions and definitions
  */
 
 define('_JN_VERSION', '1.0.0');
@@ -23,7 +23,7 @@ define('_JN_VERSION', '1.0.0');
  * runs before the init hook. The init hook is too late for some features, such
  * as indicating support for post thumbnails.
  */
-function Journeyo_setup(): void {
+function journeyo_setup(): void {
 	// Make theme available for translation.
 	load_theme_textdomain( 'jn', get_template_directory() . '/languages' );
 
@@ -57,24 +57,24 @@ function Journeyo_setup(): void {
 		),
 	);
 }
-add_action('after_setup_theme', 'Journeyo_setup');
+add_action('after_setup_theme', 'journeyo_setup');
 
 /**
  * Get ajax url
  *
  * @return string
  */
-function Journeyo_get_ajax_url(): string {
+function journeyo_get_ajax_url(): string {
 	return get_template_directory_uri() . '/inc/front-ajax.php';
 }
 
 /**
  * Enqueue scripts and styles.
  */
-function Journeyo_scripts(): void {
-	$ajax_url = Journeyo_get_ajax_url();
+function journeyo_scripts(): void {
+	$ajax_url = journeyo_get_ajax_url();
 
-	$Journeyo_options = array(
+	$journeyo_options = array(
 		'ajax_url' => $ajax_url,
 		'home_url' => get_home_url(),
 	);
@@ -86,8 +86,8 @@ function Journeyo_scripts(): void {
 	wp_dequeue_script( 'jquery' );
 	wp_deregister_script( 'jquery' );
 
-	wp_enqueue_style( 'Journeyo-style', get_stylesheet_uri(), array(), _JN_VERSION );
-	wp_enqueue_style( 'Journeyo-main-style', get_template_directory_uri() . '/dist/css/style.min.css', array(), _JN_VERSION );
+	wp_enqueue_style( 'journeyo-style', get_stylesheet_uri(), array(), _JN_VERSION );
+	wp_enqueue_style( 'journeyo-main-style', get_template_directory_uri() . '/dist/css/style.min.css', array(), _JN_VERSION );
 	wp_enqueue_style( 'fonts-style', get_template_directory_uri() . '/fonts/fonts.css', array(), _JN_VERSION );
 
     $manifest_path = get_template_directory() . '/dist/js/manifest.json';
@@ -104,11 +104,11 @@ function Journeyo_scripts(): void {
                     wp_enqueue_script( $chunk_handle, get_template_directory_uri() . $file, array(), _JN_VERSION, true );
 
                     if ( str_contains( $file, 'app.min.js' ) ) {
-                        wp_localize_script( $chunk_handle, 'options', $Journeyo_options );
+                        wp_localize_script( $chunk_handle, 'options', $journeyo_options );
                     }
                 }
             }
         }
     }
 }
-add_action( 'wp_enqueue_scripts', 'Journeyo_scripts' );
+add_action( 'wp_enqueue_scripts', 'journeyo_scripts' );
