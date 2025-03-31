@@ -11,3 +11,9 @@
 declare(strict_types=1);
 ?>
 <footer id="jn-footer" class=""></footer>
+</div>
+
+<?php wp_footer(); ?>
+
+</body>
+</html>
