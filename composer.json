@@ -1,0 +1,35 @@
+{
+    "name": "journeyo",
+    "description": "Custom WordPress Theme for the Journeyo travel planner app landing",
+    "type": "wordpress-theme",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Andrey-Sivak",
+            "homepage": "https://github.com/Andrey-Sivak/journeyo-theme"
+        }
+    ],
+    "require": {
+        "php": ">=8.3",
+        "squizlabs/php_codesniffer": "^3.7",
+        "wp-coding-standards/wpcs": "^3.0"
+    },
+    "require-dev": {
+        "dealerdirect/phpcodesniffer-composer-installer": "^1.0"
+    },
+    "config": {
+        "platform": {
+            "php": "8.3"
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"
+        ],
+        "post-update-cmd": [
+            "\"vendor/bin/phpcs\" --config-set installed_paths vendor/wp-coding-standards/wpcs,vendor/phpcsstandards/phpcsutils,vendor/phpcsstandards/phpcsextra"
+        ],
+        "lint": "\"vendor/bin/phpcs\" --standard=phpcs.xml .",
+        "fix": "\"vendor/bin/phpcbf\" --standard=phpcs.xml ."
+    }
+}
