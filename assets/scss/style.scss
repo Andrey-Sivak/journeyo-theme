@@ -1,18 +1,10 @@
+@use "base/variables";
+
 @import "tailwindcss/index.css";
 
 html,
 body,
 *:before,
 *:after {
-  font-family: 'Century Gothic', sans-serif;
-}
-
-:root {
-  --container-w: 1434px;
-  --jn-yellow: #FFCE08;
-  --jn-ochre: #FFA60B;
-  --jn-orange: #FF760E;
-  --jn-black: #141416;
-  --jn-gray: #D9D9D9;
-  --jn-gray-dark: #B7B7B7;
+  font-family: var(--century-gothic-font), sans-serif;
 }
