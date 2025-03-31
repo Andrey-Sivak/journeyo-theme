@@ -1,1 +1,8 @@
 @import "tailwindcss/index.css";
+
+html,
+body,
+*:before,
+*:after {
+  font-family: 'Century Gothic', sans-serif;
+}
