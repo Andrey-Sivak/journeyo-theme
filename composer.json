@@ -1,5 +1,5 @@
 {
-    "name": "journeyo",
+    "name": "andrey-sivak/journeyo",
     "description": "Custom WordPress Theme for the Journeyo travel planner app landing",
     "type": "wordpress-theme",
     "license": "GPL-2.0-or-later",
@@ -20,6 +20,9 @@
     "config": {
         "platform": {
             "php": "8.3"
+        },
+        "allow-plugins": {
+            "dealerdirect/phpcodesniffer-composer-installer": true
         }
     },
     "scripts": {
