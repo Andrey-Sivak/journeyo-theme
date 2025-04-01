@@ -10,7 +10,7 @@
  
 declare(strict_types=1);
 
-$Journeyo_body_class = '';
+$journeyo_body_class = '';
 ?>
 
 <!doctype html>
@@ -22,6 +22,5 @@ $Journeyo_body_class = '';
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( $Journeyo_body_class ); ?>>
+<body <?php body_class( $journeyo_body_class ); ?>>
 <?php wp_body_open(); ?>
-	<header id="ew-header" class=""></header>
