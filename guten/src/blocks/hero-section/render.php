@@ -56,7 +56,7 @@ $base_class = 'wp-block-journeyo-hero-section';
     </div>
 </header>
 
-<div <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?>>
     <div class="<?php echo $base_class . '__wrap-out'; ?>">
         <div class="<?php echo $base_class . '__bg'; ?>">
             <svg viewBox="0 0 1620 800" fill="none">
@@ -239,4 +239,4 @@ $base_class = 'wp-block-journeyo-hero-section';
             </div>
         </div>
     </div>
-</div>
+</section>
