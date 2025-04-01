@@ -113,4 +113,9 @@ function journeyo_scripts(): void {
 }
 add_action( 'wp_enqueue_scripts', 'journeyo_scripts' );
 
+add_action('enqueue_block_assets', function () {
+    wp_enqueue_style('journeyo-admin-style', get_template_directory_uri() . '/dist/css/journeyo-admin.min.css', array(), _JN_VERSION);
+    wp_enqueue_style('fonts-style', get_template_directory_uri() . '/fonts/fonts.css', array(), _JN_VERSION);
+});
+
 require get_template_directory() . '/guten/guten.php';
