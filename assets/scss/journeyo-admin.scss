@@ -1,0 +1,23 @@
+@use 'base/variables';
+
+.is-root-container,
+.is-root-container * {
+  font-family: var(--century-gothic-font), sans-serif;
+  color: var(--jn-black);
+
+  .components-button {
+    height: auto!important;
+  }
+
+  .journeyo-admin-button {
+    background-color: var(--jn-black);
+    color: #fff;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 10px 20px;
+
+    &:hover {
+      color: #fff;
+    }
+  }
+}
