@@ -20,7 +20,9 @@
     },
     "scripts": {
         "dev": "gulp",
-        "build": "gulp build --build"
+        "build": "gulp build --build",
+        "guten-build": "wp-scripts build --webpack-src-dir=guten/src/blocks --output-path=guten/build",
+        "guten-start": "wp-scripts start --webpack-src-dir=guten/src/blocks --output-path=guten/build"
     },
     "devDependencies": {
         "@babel/core": "^7.26.10",

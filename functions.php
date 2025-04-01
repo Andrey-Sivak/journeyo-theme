@@ -112,3 +112,5 @@ function journeyo_scripts(): void {
     }
 }
 add_action( 'wp_enqueue_scripts', 'journeyo_scripts' );
+
+require get_template_directory() . '/guten/guten.php';
