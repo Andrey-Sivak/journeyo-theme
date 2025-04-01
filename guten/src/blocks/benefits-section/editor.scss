@@ -1,0 +1,52 @@
+.wp-block-journeyo-benefits-section {
+  max-width: unset !important;
+
+  &__subtitle {
+    color: var(--jn-gray-dark) !important;
+  }
+
+  &__items {
+
+    &.jn-cols-4 {
+
+      .wp-block-journeyo-benefits-section__item {
+
+        &:nth-last-child(2) {
+          grid-column-start: 3;
+          grid-column-end: 5;
+        }
+      }
+    }
+
+    &.jn-cols-5 {
+
+      .wp-block-journeyo-benefits-section__item {
+
+        &:nth-last-child(3) {
+          grid-column-start: 3;
+          grid-column-end: 7;
+        }
+
+        &:nth-last-child(2) {
+          grid-column-start: 7;
+          grid-column-end: 11;
+        }
+      }
+    }
+  }
+
+  &__item {
+
+    div[title="Remove item"] {
+      top: 12px !important;
+      left: 12px !important;
+      right: auto !important;
+    }
+
+    &-icon {
+      .image-button {
+        padding: 0!important;
+      }
+    }
+  }
+}
