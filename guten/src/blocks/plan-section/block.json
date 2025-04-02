@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Plan Section",
   "category": "widgets",
-  "description": "",
+  "description": "A section to display three plan options with titles and subtitles.",
   "attributes": {
     "title": {
       "type": "string",

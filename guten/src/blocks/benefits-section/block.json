@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Benefits Section",
   "category": "widgets",
-  "description": "",
+  "description": "A customizable section to showcase key benefits with title, subtitle, and icons.",
   "attributes": {
     "title": {
       "type": "string",

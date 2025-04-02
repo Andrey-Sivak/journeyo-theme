@@ -5,7 +5,7 @@
   "version": "0.1.0",
   "title": "Hero Section",
   "category": "widgets",
-  "description": "",
+  "description": "A prominent hero section featuring a title, text, appStore links, and images.",
   "attributes": {
     "title": {
       "type": "string",
