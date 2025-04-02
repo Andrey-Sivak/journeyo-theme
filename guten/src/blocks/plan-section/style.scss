@@ -1,0 +1,90 @@
+.wp-block-journeyo-plan-section {
+  overflow: hidden;
+  position: relative;
+  padding: 0 16px;
+  background-color: var(--jn-orange);
+  margin: 70px 0;
+
+  @media (min-width: 768px) {
+    padding: 70px 20px;
+  }
+
+  &__wrap {
+    max-width: var(--container-w);
+    margin: 0 auto;
+  }
+
+  &__title {
+    color: #fff!important;
+    text-align: center;
+    font-size: 64px;
+    line-height: 1.1;
+    font-weight: bold;
+    margin-bottom: 50px;
+    margin-top: 0;
+  }
+
+  &__subtitle {
+    color: #fff!important;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-size: 40px;
+    line-height: 1.12;
+    text-align: center;
+  }
+
+  &__items {
+    position: relative;
+
+    &-br {
+      position: relative;
+      z-index: 10;
+      width: 100%;
+      max-width: 100%;
+      height: auto;
+    }
+
+    &-wrap {
+      position: absolute;
+      z-index: 20;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      container-type: inline-size;
+      container-name: section-plan-content;
+    }
+  }
+
+  &__item {
+    justify-self: center;
+    text-align: center;
+    max-width: 70.29%;
+
+    &-title {
+      margin-top: 0;
+      margin-bottom: 0.836cqw;
+      font-size: 2.44cqw;
+      font-weight: bold;
+      line-height: 1.2;
+
+      @supports not (font-size: 1cqw) {
+        margin-bottom: 12px;
+        font-size: 35px;
+      }
+    }
+
+    &-subtitle {
+      margin: 0;
+      line-height: 1.25;
+      font-size: 1.952cqw;
+
+      @supports not (font-size: 1cqw) {
+        font-size: 28px;
+      }
+    }
+  }
+}

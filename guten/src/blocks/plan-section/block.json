@@ -1,0 +1,61 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "journeyo/plan-section",
+  "version": "0.1.0",
+  "title": "Plan Section",
+  "category": "widgets",
+  "description": "",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "subtitle": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": [
+        { "title": "", "subtitle": "" },
+        { "title": "", "subtitle": "" },
+        { "title": "", "subtitle": "" }
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "title": {
+            "type": "string",
+            "default": ""
+          },
+          "subtitle": {
+            "type": "string",
+            "default": ""
+          }
+        }
+      }
+    }
+  },
+  "supports": {
+    "html": true,
+    "typography": {
+      "fontSize": false,
+      "lineHeight": false
+    },
+    "spacing": {
+      "padding": false,
+      "margin": false
+    },
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false
+    }
+  },
+  "textdomain": "guten",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php"
+}
