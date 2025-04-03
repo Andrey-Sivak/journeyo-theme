@@ -1,5 +1,5 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
-import { Button, TextControl } from '@wordpress/components';
+import { TextControl } from '@wordpress/components';
 import './editor.scss';
 import { Fragment, useState } from '@wordpress/element';
 import ImageUploader from '../../utils/ImageUploader.js';
@@ -8,6 +8,7 @@ import ButtonArrow from './ButtonArrow.js';
 import AppStoreButton from '../../common-components/AppStoreButton.js';
 import GooglePlayButton from '../../common-components/GooglePlayButton.js';
 import InspectorPanel from './InspectorPanel.js';
+import WarnButtonFillNeed from '../../common-components/WarnButtonFillNeed.js';
 
 const Edit = (props) => {
 	const { attributes, setAttributes } = props;
@@ -128,29 +129,17 @@ const Edit = (props) => {
 								<div className={`${baseClass}__buttons`}>
 									<div>
 										{!appStoreLink && (
-											<div
-												style={{
-													color: 'red',
-												}}
-											>
-												Enter the AppStore link
-												<br />
-												in the side panel
-											</div>
+											<WarnButtonFillNeed
+												text={`Enter the AppStore link<br />in the side panel`}
+											/>
 										)}
 										<AppStoreButton />
 									</div>
 									<div>
 										{!googlePlayLink && (
-											<div
-												style={{
-													color: 'red',
-												}}
-											>
-												Enter the Google Play link
-												<br />
-												in the side panel
-											</div>
+											<WarnButtonFillNeed
+												text={`Enter the Google Play link<br />in the side panel`}
+											/>
 										)}
 										<GooglePlayButton />
 									</div>
