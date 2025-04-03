@@ -1,0 +1,24 @@
+.wp-block-journeyo-promo-banner-section {
+  max-width: unset !important;
+
+  &__wrap-out {
+    //margin: 0;
+    //padding: 30px 20px 215px!important;
+  }
+
+  &__image-1 {
+
+    &.empty {
+      top: 20px!important;
+      left: 50px!important;
+    }
+  }
+
+  &__image-2 {
+
+    &.empty {
+      top: 20px!important;
+      left: 350px!important;
+    }
+  }
+}
