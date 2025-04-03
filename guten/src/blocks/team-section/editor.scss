@@ -1,0 +1,35 @@
+.wp-block-journeyo-team-section {
+  max-width: unset !important;
+  margin-top: 0!important;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+  }
+
+  &__item {
+
+    &-photo {
+
+      button {
+
+        &.components-button {
+          padding: 0 !important;
+        }
+
+        &.journeyo-admin-button {
+          position: relative;
+          z-index: 20;
+          width: 100%;
+          height: 100% !important;
+          border-radius: 100%;
+        }
+      }
+    }
+  }
+}
