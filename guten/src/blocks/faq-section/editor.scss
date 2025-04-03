@@ -1,0 +1,29 @@
+.wp-block-journeyo-faq-section {
+  max-width: unset !important;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  .wp-block-journeyo-faq-section__item-answer {
+    max-height: unset;
+    visibility: visible;
+    opacity: 1;
+    font-size: 30px;
+    line-height: 1.33;
+    padding-top: 20px;
+    color: rgba(0,0,0,.5);
+  }
+
+  .wp-block-journeyo-faq-section__item {
+
+    &:hover {
+
+      .wp-block-journeyo-faq-section__item-answer {
+        visibility: visible;
+        opacity: 1;
+        max-height: unset;
+      }
+    }
+  }
+}
