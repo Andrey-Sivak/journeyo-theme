@@ -1,0 +1,46 @@
+.wp-block-journeyo-reviews-section {
+  max-width: unset !important;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  &__items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+  }
+
+  &__item {
+    .components-button {
+      padding: 0 !important;
+    }
+
+    div[title="Remove item"] {
+      top: 15px !important;
+      right: 15px !important;
+    }
+
+    .wp-block-journeyo-reviews-section__item-photo {
+
+      .journeyo-admin-button {
+        height: 100% !important;
+        width: 100% !important;
+      }
+    }
+
+    &-rating {
+      flex-wrap: wrap;
+    }
+
+    .empty-rating-warn {
+      width: 100%;
+      text-align: center;
+      flex-basis: 100%;
+      flex-shrink: 0;
+      color: red;
+      margin: 0 0 4px;
+      font-size: 14px;
+    }
+  }
+}

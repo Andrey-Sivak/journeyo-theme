@@ -1,0 +1,86 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "journeyo/reviews-section",
+  "version": "0.1.0",
+  "title": "Reviews Section",
+  "category": "widgets",
+  "description": "A dynamic slider to display customer reviews and testimonials, enhancing trust and engagement on your site",
+  "attributes": {
+    "title": {
+      "type": "string",
+      "default": ""
+    },
+    "items": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "default": ""
+          },
+          "location": {
+            "type": "string",
+            "default": ""
+          },
+          "text": {
+            "type": "string",
+            "default": ""
+          },
+          "photo": {
+            "type": "object",
+            "default": {
+              "id": null,
+              "url": "",
+              "alt": ""
+            },
+            "properties": {
+              "id": {
+                "type": [
+                  "integer",
+                  "null"
+                ]
+              },
+              "url": {
+                "type": "string"
+              },
+              "alt": {
+                "type": "string"
+              }
+            }
+          },
+          "rating": {
+            "type": "integer",
+            "default": 0,
+            "minimum": 0,
+            "maximum": 5
+          }
+        }
+      }
+    }
+  },
+  "supports": {
+    "html": true,
+    "typography": {
+      "fontSize": false,
+      "lineHeight": false
+    },
+    "spacing": {
+      "padding": false,
+      "margin": false
+    },
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false
+    }
+  },
+  "textdomain": "guten",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view-script.js"
+}

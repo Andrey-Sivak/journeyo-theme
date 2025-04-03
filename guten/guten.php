@@ -4,6 +4,7 @@ function journeyo_custom_gutenberg_block_init(): void
     register_block_type(__DIR__ . '/build/hero-section');
     register_block_type(__DIR__ . '/build/benefits-section');
     register_block_type(__DIR__ . '/build/plan-section');
+    register_block_type(__DIR__ . '/build/reviews-section');
 }
 
 add_action('init', 'journeyo_custom_gutenberg_block_init');
