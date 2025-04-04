@@ -32,9 +32,14 @@ $base_class = 'wp-block-journeyo-reviews-section';
                         } else {
                             $quote_bg = '--jn-orange';
                         }
+
+                        $articleClass = $base_class . '__item';
+
+                        if (count($items) > 3) {
+                            $articleClass .= ' swiper-slide';
+                        }
                         ?>
-                        <article
-                                class="<?php echo $base_class . '__item' . count($items) > 3 ? 'swiper-slide' : ''; ?>">
+                        <article class="<?php echo $articleClass; ?>">
                             <div class="<?php echo $base_class . '__item-wrap'; ?>">
                                 <?php if (!empty($item['photo']) && is_array($item['photo']) && !empty($item['photo']['url'])) : ?>
                                     <div class="<?php echo $base_class . '__item-photo-helper'; ?>"></div>
