@@ -40,19 +40,60 @@ $base_class = 'wp-block-journeyo-hero-section';
             </div>
         <?php endif; ?>
 
-        <?php if ($button_text) : ?>
-            <button class="<?php echo $base_class . '__header-button'; ?>">
-                <span><?php echo esc_html($button_text); ?></span>
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
-                    <path
-                            d="M3.431 2.56899L12.569 2.56899L12.569 11.707M11.9344 3.20357L2.6695 12.4685"
-                            stroke="white"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                    />
-                </svg>
-            </button>
-        <?php endif; ?>
+        <div class="<?php echo $base_class . '__header-right'; ?>">
+            <?php if ($button_text) : ?>
+                <button class="<?php echo $base_class . '__header-button'; ?>">
+                    <span><?php echo esc_html($button_text); ?></span>
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                        <path
+                                d="M3.431 2.56899L12.569 2.56899L12.569 11.707M11.9344 3.20357L2.6695 12.4685"
+                                stroke="white"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                        />
+                    </svg>
+                </button>
+            <?php endif; ?>
+
+            <?php
+            $languages = apply_filters('wpml_active_languages', null, array('skip_missing' => 0));
+
+            if (!empty($languages)) :
+                ?>
+                <div class="<?php echo $base_class . '__header-langs'; ?>">
+                    <div class="<?php echo $base_class . '__header-langs-active'; ?>">
+                        <?php
+                        foreach ($languages as $lang) {
+                            if ($lang['active']) {
+                                if (!empty($lang['country_flag_url'])) {
+                                    echo '<img src="' . esc_url($lang['country_flag_url']) . '" width="30" alt="' . esc_attr($lang['translated_name']) . '" class="wpml-flag">';
+                                }
+                            }
+                        }
+                        ?>
+                    </div>
+                    <div class="<?php echo $base_class . '__header-langs-list-wrap'; ?>">
+                        <div class="<?php echo $base_class . '__header-langs-list'; ?>">
+                            <?php
+                            foreach ($languages as $lang) :
+                                if (!$lang['active']) :
+                                    if (!empty($lang['country_flag_url'])) : ?>
+                                        <a href="<?php echo esc_url($lang['url']); ?>"
+                                           title="<?php echo esc_attr($lang['translated_name']); ?>">
+                                            <img src="<?php echo esc_url($lang['country_flag_url']); ?>" width="30"
+                                                 alt="<?php echo esc_attr($lang['translated_name']); ?>"
+                                                 class="wpml-flag">
+                                        </a>
+                                    <?php
+                                    endif;
+                                endif;
+                            endforeach;
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            <?php endif; ?>
+        </div>
     </div>
 </header>
 

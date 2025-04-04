@@ -76,6 +76,59 @@
       line-height: 18px;
       user-select: none;
     }
+
+    &-right {
+      display: flex;
+      align-items: center;
+      column-gap: 16px;
+    }
+
+    &-langs {
+      position: relative;
+      cursor: pointer;
+
+      .wpml-flag {
+        image-rendering: pixelated;
+      }
+
+      &.active {
+
+        .wp-block-journeyo-hero-section__header-langs-list-wrap {
+          max-height: 300px;
+        }
+
+        .wp-block-journeyo-hero-section__header-langs-list {
+          opacity: 1;
+        }
+
+        .wp-block-journeyo-hero-section__header-langs-active {
+          border-radius: 6px 6px 0 0;
+        }
+      }
+
+      &-active {
+        background-color: #fff;
+        border-radius: 6px;
+        padding: 6px;
+      }
+
+      &-list {
+        opacity: 0;
+
+        &-wrap {
+          position: absolute;
+          overflow: hidden;
+          transition: all ease .3s;
+          max-height: 0;
+        }
+
+        a {
+          padding: 4px 6px;
+          display: block;
+          background-color: #fff;
+        }
+      }
+    }
   }
 
   &__content {
