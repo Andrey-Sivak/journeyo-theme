@@ -1,0 +1,84 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 3,
+  "name": "journeyo/footer",
+  "version": "0.1.0",
+  "title": "Footer",
+  "category": "widgets",
+  "description": "",
+  "attributes": {
+    "logo": {
+      "type": "object",
+      "default": {
+        "id": null,
+        "url": "",
+        "alt": "",
+        "w": 0,
+        "h": 0
+      }
+    },
+    "menuItems": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "string",
+        "default": ""
+      }
+    },
+    "socials": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "icon": {
+            "type": "object",
+            "default": {
+              "id": null,
+              "url": "",
+              "alt": ""
+            }
+          },
+          "url": {
+            "type": "string",
+            "default": ""
+          }
+        }
+      }
+    },
+    "privacyPolicyText": {
+      "type": "string",
+      "default": ""
+    },
+    "termsOfUsePolicyText": {
+      "type": "string",
+      "default": ""
+    },
+    "copyrightText": {
+      "type": "string",
+      "default": ""
+    }
+  },
+  "supports": {
+    "html": true,
+    "typography": {
+      "fontSize": false,
+      "lineHeight": false
+    },
+    "spacing": {
+      "padding": false,
+      "margin": false
+    },
+    "color": {
+      "background": false,
+      "gradients": false,
+      "text": false
+    }
+  },
+  "textdomain": "guten",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "render": "file:./render.php",
+  "viewScript": "file:./view-script.js"
+}
