@@ -9,10 +9,9 @@
  */
  
 declare(strict_types=1);
-?>
-</div>
 
-<?php wp_footer(); ?>
+wp_footer();
+?>
 
 </body>
 </html>
