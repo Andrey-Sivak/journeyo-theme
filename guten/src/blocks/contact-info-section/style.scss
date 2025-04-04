@@ -23,7 +23,7 @@
 
   &__title {
     color: #fff !important;
-    font-size: 5.45cqw;
+    font-size: 6.66cqw;
     font-weight: bold;
     text-align: center;
     margin-bottom: 30px;
@@ -42,7 +42,7 @@
 
   &__item {
     text-align: center;
-    font-size: 2.72cqw;
+    font-size: 3.125cqw;
 
     @supports not (font-size: 1cqw) {
       font-size: 30px;
