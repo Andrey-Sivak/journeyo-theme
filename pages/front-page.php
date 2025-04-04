@@ -6,7 +6,7 @@
 get_header();
 ?>
 
-<main class="relative z-20">
+<main class="relative z-20 overflow-x-hidden">
     <?php the_content(); ?>
 </main>
 
