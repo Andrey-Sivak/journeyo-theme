@@ -8,3 +8,7 @@ body,
 *:after {
   font-family: var(--century-gothic-font), sans-serif;
 }
+
+.wpml-ls-statics-footer {
+  display: none!important;
+}
