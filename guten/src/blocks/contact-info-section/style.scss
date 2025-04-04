@@ -1,0 +1,66 @@
+.wp-block-journeyo-contact-info-section {
+  overflow: hidden;
+  position: relative;
+  padding: 0 16px;
+  margin: 70px 0;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @media (min-width: 768px) {
+    padding: 0 20px;
+  }
+
+  &__wrap {
+    max-width: 1100px;
+    border-radius: 65px;
+    margin: 0 auto;
+    background-image: linear-gradient(225deg, var(--jn-orange) 38%, var(--jn-yellow) 89%);
+    padding: 70px;
+    container-type: inline-size;
+  }
+
+  &__title {
+    color: #fff !important;
+    font-size: 5.45cqw;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: 0;
+    line-height: 1.09;
+
+    @supports not (font-size: 1cqw) {
+      font-size: 64px;
+    }
+  }
+
+  &__items {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__item {
+    text-align: center;
+    font-size: 2.72cqw;
+
+    @supports not (font-size: 1cqw) {
+      font-size: 30px;
+    }
+
+    &-label {
+      margin: 0;
+      display: inline;
+      font-weight: bold;
+      line-height: 1.33;
+      color: #fff !important;
+    }
+
+    &-value {
+      margin: 0;
+      display: inline;
+      line-height: 1.26;
+      color: #fff !important;
+    }
+  }
+}
