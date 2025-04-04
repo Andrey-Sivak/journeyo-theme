@@ -1,17 +1,23 @@
 import Swiper from 'swiper';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 
+const config = {
+	initSlidesCount: 3,
+};
+
 document.addEventListener('DOMContentLoaded', () => {
 	const sliders = document.querySelectorAll(
 		'.wp-block-journeyo-reviews-section__items',
 	);
 
 	sliders.forEach((slider) => {
+		const slideCount = slider.querySelectorAll('.swiper-slide').length;
+
 		new Swiper(slider, {
 			modules: [Navigation, Pagination, Autoplay],
-			slidesPerView: 3,
+			slidesPerView: config.initSlidesCount,
 			spaceBetween: 30,
-			loop: true,
+			loop: slideCount > config.initSlidesCount + 1,
 			// autoplay: {
 			// 	delay: 3000,
 			// },
