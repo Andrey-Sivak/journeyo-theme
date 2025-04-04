@@ -66,7 +66,8 @@ $base_class = 'wp-block-journeyo-hero-section';
                         foreach ($languages as $lang) {
                             if ($lang['active']) {
                                 if (!empty($lang['country_flag_url'])) {
-                                    echo '<img src="' . esc_url($lang['country_flag_url']) . '" width="30" alt="' . esc_attr($lang['translated_name']) . '" class="wpml-flag">';
+                                    echo '<span class="wpml-lang-code">' . esc_html(strtoupper($lang['language_code'])) . '</span>';
+                                    echo '<img src="' . esc_url($lang['country_flag_url']) . '" alt="' . esc_attr($lang['translated_name']) . '" class="wpml-flag">';
                                 }
                             }
                         }
@@ -80,7 +81,8 @@ $base_class = 'wp-block-journeyo-hero-section';
                                     if (!empty($lang['country_flag_url'])) : ?>
                                         <a href="<?php echo esc_url($lang['url']); ?>"
                                            title="<?php echo esc_attr($lang['translated_name']); ?>">
-                                            <img src="<?php echo esc_url($lang['country_flag_url']); ?>" width="30"
+                                            <span><?php echo esc_html(strtoupper($lang['language_code'])); ?></span>
+                                            <img src="<?php echo esc_url($lang['country_flag_url']); ?>"
                                                  alt="<?php echo esc_attr($lang['translated_name']); ?>"
                                                  class="wpml-flag">
                                         </a>

@@ -88,7 +88,7 @@
       cursor: pointer;
 
       .wpml-flag {
-        image-rendering: pixelated;
+        height: auto;
       }
 
       &.active {
@@ -109,7 +109,12 @@
       &-active {
         background-color: #fff;
         border-radius: 6px;
-        padding: 6px;
+        padding: 4px 10px;
+        display: flex;
+        align-items: center;
+        column-gap: 6px;
+        font-weight: bold;
+        border: 1px solid var(--jn-gray-dark);
       }
 
       &-list {
@@ -123,9 +128,23 @@
         }
 
         a {
-          padding: 4px 6px;
-          display: block;
+          padding: 4px 10px;
+          display: flex;
+          align-items: center;
+          column-gap: 6px;
+          font-weight: bold;
           background-color: #fff;
+          border-left: 1px solid var(--jn-gray-dark);
+          border-right: 1px solid var(--jn-gray-dark);
+
+          &:hover {
+            background-color: var(--jn-gray);
+          }
+
+          &:last-child {
+            border-radius: 0 0 6px 6px;
+            border-bottom: 1px solid var(--jn-gray-dark);
+          }
         }
       }
     }

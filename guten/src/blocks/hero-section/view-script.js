@@ -18,7 +18,8 @@ document.addEventListener('DOMContentLoaded', () => {
 			e.target.classList.contains(
 				'wp-block-journeyo-hero-section__header-langs-active',
 			) ||
-			e.target.classList.contains('wpml-flag')
+			e.target.classList.contains('wpml-flag') ||
+			e.target.classList.contains('wpml-lang-code')
 		) {
 			return;
 		}
