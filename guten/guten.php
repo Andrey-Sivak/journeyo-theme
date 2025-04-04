@@ -9,6 +9,7 @@ function journeyo_custom_gutenberg_block_init(): void
     register_block_type(__DIR__ . '/build/team-section');
     register_block_type(__DIR__ . '/build/faq-section');
     register_block_type(__DIR__ . '/build/contact-info-section');
+    register_block_type(__DIR__ . '/build/form-section');
 }
 
 add_action('init', 'journeyo_custom_gutenberg_block_init');
