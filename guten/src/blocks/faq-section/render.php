@@ -6,7 +6,7 @@ $wrapper_attributes = get_block_wrapper_attributes();
 $base_class = 'wp-block-journeyo-faq-section';
 ?>
 
-<div <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?>>
     <div class="<?php echo $base_class . '__wrap'; ?>">
         <?php if (!empty($title)) : ?>
             <h2 class="<?php echo $base_class . '__title jn-animate'; ?>">
@@ -51,4 +51,4 @@ $base_class = 'wp-block-journeyo-faq-section';
             </div>
         <?php endif; ?>
     </div>
-</div>
+</section>
