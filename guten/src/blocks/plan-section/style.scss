@@ -1,8 +1,8 @@
 .wp-block-journeyo-plan-section {
   overflow: hidden;
   position: relative;
-  padding: 0 16px;
   background-color: var(--jn-orange);
+  padding: 0 16px;
   margin: 70px 0;
 
   @media (min-width: 768px) {
@@ -15,22 +15,32 @@
   }
 
   &__title {
-    color: #fff!important;
+    color: #fff !important;
     text-align: center;
-    font-size: 64px;
     line-height: 1.1;
     font-weight: bold;
-    margin-bottom: 50px;
     margin-top: 0;
+    margin-bottom: 3.378vw;
+    font-size: 4.324vw;
+
+    @media(min-width: 1480px) {
+      margin-bottom: 50px;
+      font-size: 64px;
+    }
   }
 
   &__subtitle {
-    color: #fff!important;
-    margin-bottom: 30px;
+    color: #fff !important;
     margin-top: 0;
-    font-size: 40px;
     line-height: 1.12;
     text-align: center;
+    margin-bottom: 2.027vw;
+    font-size: 2.7vw;
+
+    @media(min-width: 1480px) {
+      margin-bottom: 30px;
+      font-size: 40px;
+    }
   }
 
   &__items {
@@ -66,24 +76,33 @@
 
     &-title {
       margin-top: 0;
-      margin-bottom: 0.836cqw;
-      font-size: 2.44cqw;
       font-weight: bold;
       line-height: 1.2;
+      font-size: 2.364vw;
+      margin-bottom: .81vw;
 
-      @supports not (font-size: 1cqw) {
-        margin-bottom: 12px;
-        font-size: 35px;
+      @media(min-width: 1480px) {
+        font-size: 2.44cqw;
+        margin-bottom: 0.836cqw;
+
+        @supports not (font-size: 1cqw) {
+          font-size: 35px;
+          margin-bottom: 12px;
+        }
       }
     }
 
     &-subtitle {
       margin: 0;
       line-height: 1.25;
-      font-size: 1.952cqw;
+      font-size: 1.891vw;
 
-      @supports not (font-size: 1cqw) {
-        font-size: 28px;
+      @media(min-width: 1480px) {
+        font-size: 1.952cqw;
+
+        @supports not (font-size: 1cqw) {
+          font-size: 28px;
+        }
       }
     }
   }

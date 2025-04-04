@@ -22,23 +22,37 @@
     width: fit-content;
     font-weight: bold;
     line-height: 1.09;
-    font-size: 64px;
-    margin: 0 auto 50px;
+    margin: 0 auto 3.378vw;
+    font-size: 4.324vw;
+
+    @media(min-width: 1480px) {
+      margin: 0 auto 50px;
+      font-size: 64px;
+    }
   }
 
   &__subtitle {
     text-align: center;
-    font-size: 40px;
     line-height: 1.12;
     margin-top: 0;
-    margin-bottom: 50px;
+    margin-bottom: 3.378vw;
     color: var(--jn-gray-dark);
+    font-size: 2.7vw;
+
+    @media(min-width: 1480px) {
+      margin-bottom: 50px;
+      font-size: 40px;
+    }
   }
 
   &__items {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    gap: 30px;
+    gap: 2.027vw;
+
+    @media(min-width: 1480px) {
+      gap: 30px;
+    }
 
     &.jn-cols-3 {
       grid-template-columns: repeat(3, 1fr);
@@ -77,18 +91,26 @@
   }
 
   &__item {
-    margin-top: 24px;
+    margin-top: 1.621vw;
     container-type: inline-size;
     container-name: benefits-item;
     position: relative;
-    padding: 140px 30px 40px;
+    padding: 9.46vw 2.02vw 2.7vw;
     text-align: center;
 
+    @media(min-width: 1480px) {
+      margin-top: 24px;
+      padding: 140px 30px 40px;
+    }
+
     $border: 3px;
-    //background: #fff;
     background-clip: padding-box;
     border: solid $border transparent;
-    border-radius: 40px;
+    border-radius: 3.378vw;
+
+    @media(min-width: 1480px) {
+      border-radius: 50px;
+    }
 
     &:before {
       content: '';
@@ -115,16 +137,25 @@
 
     &-title {
       margin-top: 0;
-      margin-bottom: 12px;
-      font-size: 35px;
       line-height: 1.2;
       font-weight: bold;
+      font-size: 2.364vw;
+      margin-bottom: 0.81vw;
+
+      @media(min-width: 1480px) {
+        margin-bottom: 12px;
+        font-size: 35px;
+      }
     }
 
     &-subtitle {
       margin: 0;
-      font-size: 30px;
+      font-size: 2.027vw;
       line-height: 1.26;
+
+      @media(min-width: 1480px) {
+        font-size: 30px;
+      }
     }
 
     &-icon {
@@ -135,18 +166,29 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      width: 35.71cqw;
-      height: 35.71cqw;
       left: auto;
-      top: -6.12cqw;
-      right: -3.57cqw;
       margin: 0;
+      width: 9.46vw;
+      height: 9.46vw;
+      top: -1.621vw;
+      right: -0.945vw;
 
-      @supports not (font-size: 1cqw) {
-        width: 140px;
-        height: 140px;
-        top: -24px;
-        right: -14px;
+      @media(min-width: 1480px) {
+        width: 35.71cqw;
+        height: 35.71cqw;
+        top: -6.12cqw;
+        right: -3.57cqw;
+
+        @supports not (width: 1cqw) {
+          width: 140px;
+          height: 140px;
+          top: -24px;
+          right: -14px;
+        }
+      }
+
+      img {
+        max-width: 54.68%;
       }
     }
 
@@ -157,16 +199,23 @@
       border: 3px solid var(--jn-orange);
       background-color: #fff;
       border-radius: 100%;
-      width: 43.62cqw;
-      height: 43.62cqw;
-      top: -9.69cqw;
-      right: -7.14cqw;
+      width: 11.554vw;
+      height: 11.554vw;
+      top: -2.567vw;
+      right: -1.89vw;
 
-      @supports not (font-size: 1cqw) {
-        width: 171px;
-        height: 171px;
-        top: -38px;
-        right: -28px;
+      @media(min-width: 1480px) {
+        width: 43.62cqw;
+        height: 43.62cqw;
+        top: -9.69cqw;
+        right: -7.14cqw;
+
+        @supports not (font-size: 1cqw) {
+          width: 171px;
+          height: 171px;
+          top: -38px;
+          right: -28px;
+        }
       }
     }
 
@@ -178,20 +227,30 @@
       transform: translateY(-3px);
       left: auto;
       width: 50%;
-      right: -40px;
-      height: 40px;
       background-color: #fff;
+      right: -2.7vw;
+      height: 2.7vw;
+
+      @media(min-width: 1480px) {
+        right: -40px;
+        height: 40px;
+      }
     }
 
     &-icon-helper-right {
       position: absolute;
       z-index: 19;
-      top: -40px;
       transform: translateX(3px);
       left: 100%;
-      height: 50%;
-      width: 30px;
       background-color: #fff;
+      height: 50%;
+      top: -2.7vw;
+      width: 2.027vw;
+
+      @media(min-width: 1480px) {
+        top: -40px;
+        width: 30px;
+      }
     }
   }
 }

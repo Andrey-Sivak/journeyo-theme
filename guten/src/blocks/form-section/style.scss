@@ -15,13 +15,19 @@
   &__wrap {
     position: relative;
     z-index: 10;
-    max-width: 1100px;
-    border-radius: 65px;
     margin: 0 auto;
     background-image: linear-gradient(225deg, var(--jn-orange) 38%, var(--jn-yellow) 89%);
-    padding: 70px;
     container-type: inline-size;
     container-name: form-wrap;
+    max-width: 74.324vw;
+    border-radius: 4.391vw;
+    padding: 4.729vw;
+
+    @media(min-width: 1480px) {
+      max-width: 1100px;
+      border-radius: 65px;
+      padding: 70px;
+    }
   }
 
   &__title {
@@ -43,9 +49,13 @@
     position: absolute;
     transform: rotate(147deg);
     width: 40.88vw;
-    top: -17.08vw;
+    top: -10vw;
     left: auto;
     right: -8.697vw;
+
+    @media(min-width: 1680px) {
+      top: -17.08vw;
+    }
 
     svg {
       display: block;
