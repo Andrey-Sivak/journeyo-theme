@@ -1,10 +1,12 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { Button } from '@wordpress/components';
-import { TextControl } from '@wordpress/components';
 import './editor.scss';
-import { Fragment, useState } from '@wordpress/element';
+import { Fragment } from '@wordpress/element';
 import ImageUploader from '../../utils/ImageUploader.js';
 import RemoveButtonCross from '../../utils/RemoveButtonCross.js';
+import LinkEditor from '../../utils/LinkEditor.js';
+import MenuItem from './MenuItem.js';
+import SocialItem from './SocialItem.js';
 // import InspectorPanel from './InspectorPanel.js';
 
 const Edit = (props) => {
@@ -36,14 +38,23 @@ const Edit = (props) => {
 		});
 	};
 
-	const updateMenuItem = (index, newValue) => {
+	const updateMenuItem = (index, fieldOrFields, value) => {
 		const updatedItems = [...menuItems];
-		updatedItems[index] = newValue;
+		if (typeof fieldOrFields === 'string') {
+			updatedItems[index] = {
+				...updatedItems[index],
+				[fieldOrFields]: value,
+			};
+		} else {
+			updatedItems[index] = { ...updatedItems[index], ...fieldOrFields };
+		}
 		setAttributes({ menuItems: updatedItems });
 	};
 
 	// const addMenuItem = () => {
-	// 	setAttributes({ menuItems: [...menuItems, ''] });
+	// 	setAttributes({
+	// 		menuItems: [...menuItems, { text: '', url: '', target: '' }],
+	// 	});
 	// };
 	//
 	// const removeMenuItem = (index) => {
@@ -51,9 +62,16 @@ const Edit = (props) => {
 	// 	setAttributes({ menuItems: newItems });
 	// };
 
-	const updateSocialItem = (index, field, value) => {
+	const updateSocialItem = (index, fieldOrFields, value) => {
 		const newItems = [...socials];
-		newItems[index] = { ...newItems[index], [field]: value };
+		if (typeof fieldOrFields === 'string') {
+			newItems[index] = {
+				...newItems[index],
+				[fieldOrFields]: value,
+			};
+		} else {
+			newItems[index] = { ...newItems[index], ...fieldOrFields };
+		}
 		setAttributes({ socials: newItems });
 	};
 
@@ -63,10 +81,10 @@ const Edit = (props) => {
 	// 		url: '',
 	// 		alt: '',
 	// 	};
-	// 	const newItems = [...socials, { url: '', icon }];
+	// 	const newItems = [...socials, { url: '', icon, target: '' }];
 	// 	setAttributes({ socials: newItems });
 	// };
-
+	//
 	// const removeSocialItem = (index) => {
 	// 	const newItems = socials.filter((_, i) => i !== index);
 	// 	setAttributes({ socials: newItems });
@@ -94,27 +112,13 @@ const Edit = (props) => {
 							<div className={`${baseClass}__top-right-top`}>
 								<div className={`${baseClass}__menu-items`}>
 									{menuItems.map((item, index) => (
-										<div style={{ position: 'relative' }}>
-											<RichText
-												tagName="p"
-												key={index}
-												className={`${baseClass}__menu-item`}
-												value={item}
-												onChange={(newValue) =>
-													updateMenuItem(
-														index,
-														newValue,
-													)
-												}
-												placeholder="Link text..."
-											/>
-											{/*<RemoveButtonCross*/}
-											{/*	handleClick={() =>*/}
-											{/*		removeMenuItem(index)*/}
-											{/*	}*/}
-											{/*	color="#000"*/}
-											{/*/>*/}
-										</div>
+										<MenuItem
+											key={index}
+											item={item}
+											baseClass={baseClass}
+											updateMenuItem={updateMenuItem}
+											index={index}
+										/>
 									))}
 									{/*<Button*/}
 									{/*	isPrimary*/}
@@ -127,35 +131,13 @@ const Edit = (props) => {
 
 								<div className={`${baseClass}__social-items`}>
 									{socials.map((item, index) => (
-										<div
-											className={`${baseClass}__social-item`}
-											style={{ position: 'relative' }}
-										>
-											<ImageUploader
-												key={index}
-												buttonText={`Select Icon`}
-												image={item.icon.url}
-												onSelect={(media) => {
-													const iconData = {
-														id: media.id,
-														url: media.url,
-														alt: media.alt || '',
-													};
-
-													updateSocialItem(
-														index,
-														'icon',
-														iconData,
-													);
-												}}
-											/>
-											{/*<RemoveButtonCross*/}
-											{/*	handleClick={() =>*/}
-											{/*		removeSocialItem(index)*/}
-											{/*	}*/}
-											{/*	color="#000"*/}
-											{/*/>*/}
-										</div>
+										<SocialItem
+											key={index}
+											item={item}
+											baseClass={baseClass}
+											index={index}
+											updateSocialItem={updateSocialItem}
+										/>
 									))}
 									{/*<Button*/}
 									{/*	isPrimary*/}

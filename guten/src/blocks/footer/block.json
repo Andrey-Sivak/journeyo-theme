@@ -21,8 +21,21 @@
       "type": "array",
       "default": [],
       "items": {
-        "type": "string",
-        "default": ""
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "default": ""
+          },
+          "url": {
+            "type": "string",
+            "default": ""
+          },
+          "target": {
+            "type": "string",
+            "default": ""
+          }
+        }
       }
     },
     "socials": {
@@ -40,6 +53,10 @@
             }
           },
           "url": {
+            "type": "string",
+            "default": ""
+          },
+          "target": {
             "type": "string",
             "default": ""
           }

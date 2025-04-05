@@ -48,8 +48,10 @@ $base_class = 'wp-block-journeyo-footer';
                     <?php if (!empty($menu_items)) : ?>
                         <div class="<?php echo $base_class . '__menu-items'; ?>">
                             <?php foreach ($menu_items as $index => $item) : ?>
-                                <a href="#" class="<?php echo $base_class . '__menu-item'; ?>">
-                                    <?php echo wp_kses_post($item); ?>
+                                <a href="<?php echo esc_url($item['url']); ?>"
+                                   target="<?php echo esc_attr($item['target']); ?>"
+                                   class="<?php echo $base_class . '__menu-item'; ?>">
+                                    <?php echo esc_html($item['text']); ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>
@@ -59,6 +61,7 @@ $base_class = 'wp-block-journeyo-footer';
                         <div class="<?php echo $base_class . '__social-items'; ?>">
                             <?php foreach ($socials as $social_item) : ?>
                                 <a href="<?php echo esc_url($social_item['url']); ?>"
+                                   target="<?php echo esc_attr($social_item['target']); ?>"
                                    class="<?php echo $base_class . '__social-item'; ?>">
                                     <img
                                             src="<?php echo esc_url($social_item['icon']['url']); ?>"
