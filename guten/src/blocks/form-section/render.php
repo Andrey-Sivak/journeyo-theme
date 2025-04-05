@@ -1,8 +1,11 @@
 <?php
 $title = $attributes['title'] ?? '';
+$block_id = $attributes['blockId'] ?? '';
 $form_shortcode = $attributes['formShortcode'] ?? '';
 
-$wrapper_attributes = get_block_wrapper_attributes();
+$wrapper_attributes = get_block_wrapper_attributes([
+    'id' => !empty($block_id) ? esc_attr($block_id) : null,
+]);
 $base_class = 'wp-block-journeyo-form-section';
 
 $svg_arrow = '<svg viewBox="0 0 786 401" fill="none" preserveAspectRatio="xMidYMid slice">
