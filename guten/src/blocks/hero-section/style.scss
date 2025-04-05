@@ -11,7 +11,11 @@
     max-width: 1620px;
     margin: 30px auto 0;
     position: relative;
-    padding: 200px 20px 11vw;
+    padding: 110px 20px 9vw;
+
+    @media(min-width: 1200px) {
+      padding: 200px 20px 11vw;
+    }
 
     @media(min-width: 1680px) {
       padding: 195px 20px 215px;
@@ -47,13 +51,17 @@
     padding: 20px 16px;
     position: absolute;
     left: 50%;
-    top: 46px;
+    top: 25px;
     transform: translateX(-50%);
     z-index: 1000;
     width: 100%;
 
     @media (min-width: 768px) {
       padding: 20px 40px;
+    }
+
+    @media(min-width: 1200px) {
+      top: 46px;
     }
 
     &-wrap {
@@ -65,7 +73,24 @@
       justify-content: space-between;
     }
 
-    &-logo {}
+    &-logo {
+      width: 15vw;
+
+      @media(min-width: 1480px) {
+        width: auto;
+      }
+
+      figure {
+        margin: 0;
+      }
+
+      img {
+        max-width: 100%;
+        display: block;
+        width: auto;
+        height: auto;
+      }
+    }
 
     &-button {
       background-color: var(--jn-black);
@@ -161,10 +186,16 @@
     &-image {
       position: absolute;
       z-index: 10;
-      top: -119px;
-      left: 43vw;
       right: auto;
-      width: 53.63vw;
+      top: -30px;
+      left: 49vw;
+      width: 48vw;
+
+      @media(min-width: 1200px) {
+        top: -119px;
+        left: 43vw;
+        width: 53.63vw;
+      }
 
       @media(min-width: 1680px) {
         left: auto;
@@ -179,7 +210,11 @@
     &-text {
       position: relative;
       z-index: 20;
-      max-width: 62.06%;
+      max-width: 65%;
+
+      @media(min-width: 1200px) {
+        max-width: 62.06%;
+      }
     }
   }
 
@@ -189,9 +224,13 @@
     //transform: translateY(300px);
     //opacity: 0;
     //animation: floatUp 1.2s forwards;
-    margin-bottom: 30px;
-    font-size: 4.285vw;
     line-height: 1.05;
+    margin-bottom: 30px;
+    font-size: 4.6vw;
+
+    @media(min-width: 1200px) {
+      font-size: 4.285vw;
+    }
 
     @media(min-width: 1680px) {
       font-size: 72px;
@@ -203,9 +242,14 @@
     //opacity: 0;
     //animation: floatUp 1.2s forwards .4s;
     margin: 0;
-    max-width: 85%;
-    font-size: 1.78vw;
     line-height: 1.26;
+    max-width: 90%;
+    font-size: 2.1vw;
+
+    @media(min-width: 1200px) {
+      max-width: 85%;
+      font-size: 1.78vw;
+    }
 
     @media(min-width: 1680px) {
       font-size: 30px;
@@ -221,6 +265,18 @@
     a {
       //transform: translateY(300px);
       //opacity: 0;
+      width: 30%;
+
+      @media(min-width: 1200px) {
+        width: auto;
+      }
+
+      svg {
+        display: block;
+        width: auto;
+        max-width: 100%;
+        height: auto;
+      }
 
       &:first-child {
         //animation: floatUpBtn 1.4s forwards .65s;

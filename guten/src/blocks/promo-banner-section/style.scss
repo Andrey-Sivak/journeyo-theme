@@ -155,6 +155,16 @@
     a {
       //transform: translateY(300px);
       //opacity: 0;
+      width: 43.5%;
+
+      @media(min-width: 1480px) {
+        width: auto;
+      }
+
+      svg {
+        width: 100%;
+        height: auto;
+      }
 
       &:first-child {
         //animation: floatUpBtn 1.4s forwards .65s;

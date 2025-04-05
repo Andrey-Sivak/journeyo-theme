@@ -29,11 +29,11 @@ document.addEventListener('DOMContentLoaded', () => {
 				el: '.wp-block-journeyo-reviews-section__pagination',
 				clickable: true,
 			},
-			// breakpoints: {
-			// 	320: { slidesPerView: 1 },
-			// 	768: { slidesPerView: 2 },
-			// 	1024: { slidesPerView: 3 },
-			// },
+			breakpoints: {
+				// 	320: { slidesPerView: 1 },
+				768: { slidesPerView: 2 },
+				1200: { slidesPerView: config.initSlidesCount },
+			},
 		});
 	});
 });
