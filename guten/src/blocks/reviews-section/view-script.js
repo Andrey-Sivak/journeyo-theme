@@ -30,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
 				clickable: true,
 			},
 			breakpoints: {
-				// 	320: { slidesPerView: 1 },
-				768: { slidesPerView: 2 },
+				320: { slidesPerView: 1 },
+				767: { slidesPerView: 2 },
 				1200: { slidesPerView: config.initSlidesCount },
 			},
 		});

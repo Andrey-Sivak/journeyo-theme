@@ -19,9 +19,12 @@
     background-image: linear-gradient(225deg, var(--jn-orange) 38%, var(--jn-yellow) 89%);
     container-type: inline-size;
     container-name: form-wrap;
-    max-width: 74.324vw;
     border-radius: 4.391vw;
     padding: 4.729vw;
+
+    @media(min-width: 1024px) {
+      max-width: 74.324vw;
+    }
 
     @media(min-width: 1480px) {
       max-width: 1100px;
@@ -32,12 +35,17 @@
 
   &__title {
     color: #fff !important;
-    font-size: 6.66cqw;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 50px;
+    margin-bottom: 4vw;
     margin-top: 0;
-    line-height: 1.09;
+    line-height: 1.2;
+    font-size: 5vw;
+
+    @media(min-width: 1024px) {
+      font-size: 6.66cqw;
+      margin-bottom: 50px;
+    }
 
     @supports not (font-size: 1cqw) {
       font-size: 64px;
@@ -48,10 +56,15 @@
     z-index: 20;
     position: absolute;
     transform: rotate(147deg);
-    width: 40.88vw;
-    top: -10vw;
     left: auto;
+    top: -8.5vw;
+    width: 44vw;
     right: -8.697vw;
+
+    @media(min-width: 1024px) {
+      top: -10vw;
+      width: 40.88vw;
+    }
 
     @media(min-width: 1680px) {
       top: -17.08vw;
@@ -79,16 +92,26 @@
 
   &__block-big-lt,
   &__block-big-rt {
-    width: 24.89cqw;
-    height: 24.89cqw;
-    border-radius: 45px;
+    display: none;
+
+    @media(min-width: 1024px) {
+      display: block;
+      width: 24.89cqw;
+      height: 24.89cqw;
+      border-radius: 45px;
+    }
   }
 
   &__block-small-rt,
   &__block-small-lt {
-    width: 12.6cqw;
-    height: 12.6cqw;
-    border-radius: 24px;
+    display: none;
+
+    @media(min-width: 1024px) {
+      width: 12.6cqw;
+      height: 12.6cqw;
+      border-radius: 24px;
+      display: block;
+    }
   }
 
   &__block {
@@ -140,6 +163,9 @@
       position: absolute;
       inset: 0;
       z-index: 10;
+      display: block;
+      width: 100%;
+      height: auto;
     }
 
     .jn-form {
@@ -148,7 +174,11 @@
       border-radius: 100px;
       display: flex;
       align-items: stretch;
-      max-width: 652px;
+      max-width: 350px;
+
+      @media(min-width: 1024px) {
+        max-width: 652px;
+      }
 
       & > p {
         position: relative;
@@ -166,24 +196,37 @@
       }
 
       input {
-        font-size: 20px;
         display: block;
         line-height: 1.25;
+        font-size: 16px;
+
+        @media(min-width: 1024px) {
+          font-size: 20px;
+        }
         
         &[type="submit"] {
           background-color: var(--jn-black);
           color: #fff;
-          padding: 28px 61px;
           border-radius: 100px;
           cursor: pointer;
+          padding: 12px 20px;
+
+          @media(min-width: 1024px) {
+            padding: 28px 61px;
+          }
         }
 
         &[type="email"] {
-          padding: 28px 28px;
-          width: 95%;
+          width: 100%;
           border: none;
           outline: none;
           background-color: transparent;
+          padding: 12px 16px;
+
+          @media(min-width: 1024px) {
+            width: 95%;
+            padding: 28px 61px;
+          }
         }
       }
     }

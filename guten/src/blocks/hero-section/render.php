@@ -109,18 +109,6 @@ $base_class = 'wp-block-journeyo-hero-section';
             </div>
             <div class="<?php echo $base_class . '__wrap'; ?>">
                 <div class="<?php echo $base_class . '__content'; ?>">
-                    <?php if ($image['url']) : ?>
-                        <figure class="<?php echo $base_class . '__content-image'; ?>">
-                            <img
-                                    src="<?php echo esc_url($image['url']); ?>"
-                                    alt="<?php echo esc_url($image['alt']); ?>"
-                                    width="901"
-                                    height="750"
-                                    loading="eager"
-                            >
-                        </figure>
-                    <?php endif; ?>
-
                     <div class="<?php echo $base_class . '__content-text'; ?>">
                         <?php if (!empty($title)) : ?>
                             <h1 class="<?php echo $base_class . '__title'; ?>">
@@ -280,6 +268,18 @@ $base_class = 'wp-block-journeyo-hero-section';
                             </a>
                         </div>
                     </div>
+
+                    <?php if ($image['url']) : ?>
+                        <figure class="<?php echo $base_class . '__content-image'; ?>">
+                            <img
+                                    src="<?php echo esc_url($image['url']); ?>"
+                                    alt="<?php echo esc_url($image['alt']); ?>"
+                                    width="901"
+                                    height="750"
+                                    loading="eager"
+                            >
+                        </figure>
+                    <?php endif; ?>
                 </div>
             </div>
         </div>

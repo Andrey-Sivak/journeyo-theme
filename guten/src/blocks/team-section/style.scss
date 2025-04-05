@@ -3,7 +3,11 @@
   z-index: 20;
   position: relative;
   padding: 0 16px;
-  margin-top: 70px;
+  margin-top: 20px;
+
+  @media(min-width: 1024px) {
+    margin-top: 70px;
+  }
 
   * {
     box-sizing: border-box;
@@ -27,9 +31,14 @@
     color: var(--jn-orange);
     width: fit-content;
     font-weight: bold;
-    line-height: 1.09;
-    margin: 0 auto 3.378vw;
-    font-size: 4.324vw;
+    line-height: 1.2;
+    margin: 0 auto 3.5vw;
+    font-size: 5vw;
+
+    @media(min-width: 1024px) {
+      margin: 0 auto 3.378vw;
+      font-size: 4.324vw;
+    }
 
     @media(min-width: 1480px) {
       margin: 0 auto 50px;
@@ -41,9 +50,12 @@
     overflow: hidden;
     position: relative;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
     column-gap: 12px;
     row-gap: 20px;
+
+    @media(min-width: 1024px) {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
     @media(min-width: 1200px) {
       grid-template-columns: repeat(3, 1fr);
@@ -54,7 +66,11 @@
     position: relative;
     container-type: inline-size;
     container-name: team-member;
-    padding-top: 4.324vw;
+    padding-top: 5.837vw;
+
+    @media(min-width: 1024px) {
+      padding-top: 4.324vw;
+    }
 
     @media(min-width: 1480px) {
       padding-top: 64px;
@@ -64,7 +80,11 @@
       position: relative;
       background-color: var(--jn-gray);
       border-radius: 4.054vw;
-      padding: 1.013vw 1.689vw 2.702vw;
+      padding: 1.367vw 2.28vw 3.647vw;
+
+      @media(min-width: 1024px) {
+        padding: 1.013vw 1.689vw 2.702vw;
+      }
 
       @media(min-width: 1480px) {
         border-radius: 12.76cqw;
@@ -81,10 +101,17 @@
       z-index: 20;
       border-radius: 100%;
       left: 0;
-      top: -4.324vw;
-      width: 15.54vw;
-      height: 15.54vw;
-      border: 2.027vw solid #fff;
+      border: 2.736vw solid #fff;
+      top: -5.837vw;
+      width: 20.979vw;
+      height: 20.979vw;
+
+      @media(min-width: 1024px) {
+        border: 2.027vw solid #fff;
+        top: -4.324vw;
+        width: 15.54vw;
+        height: 15.54vw;
+      }
 
       @media(min-width: 1480px) {
         top: -64px;
@@ -131,8 +158,13 @@
       width: fit-content;
       margin-top: 0;
       margin-bottom: 10px;
-      margin-left: 35%;
-      font-size: 3vw;
+      margin-left: 23%;
+      font-size: 3.8vw;
+
+      @media(min-width: 1024px) {
+        margin-left: 35%;
+        font-size: 3vw;
+      }
 
       @media(min-width: 1200px) {
         margin-left: 50%;
@@ -152,8 +184,13 @@
       margin: 0;
       line-height: 1.33;
       font-weight: bold;
-      margin-left: 35%;
-      font-size: 2.35vw;
+      margin-left: 23%;
+      font-size: 3vw;
+
+      @media(min-width: 1024px) {
+        margin-left: 35%;
+        font-size: 2.35vw;
+      }
 
       @media(min-width: 1200px) {
         margin-left: 50%;
