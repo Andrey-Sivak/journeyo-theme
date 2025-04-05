@@ -48,7 +48,8 @@ $base_class = 'wp-block-journeyo-hero-section';
 
         <div class="<?php echo $base_class . '__header-right'; ?>">
             <?php if ($button_text) : ?>
-                <button class="<?php echo $base_class . '__header-button'; ?>">
+                <a href="#jn-contact-form"
+                   class="<?php echo $base_class . '__header-button'; ?>">
                     <span><?php echo esc_html($button_text); ?></span>
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
                         <path
@@ -58,7 +59,7 @@ $base_class = 'wp-block-journeyo-hero-section';
                                 stroke-linejoin="round"
                         />
                     </svg>
-                </button>
+                </a>
             <?php endif; ?>
 
             <?php
