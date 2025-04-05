@@ -2,8 +2,11 @@
 $title = $attributes['title'] ?? '';
 $subtitle = $attributes['subtitle'] ?? '';
 $items = $attributes['items'] ?? [];
+$block_id = $attributes['blockId'] ?? '';
 
-$wrapper_attributes = get_block_wrapper_attributes();
+$wrapper_attributes = get_block_wrapper_attributes([
+    'id' => !empty($block_id) ? esc_attr($block_id) : null,
+]);
 $base_class = 'wp-block-journeyo-benefits-section';
 ?>
 
