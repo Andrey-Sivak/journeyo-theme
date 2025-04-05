@@ -218,6 +218,7 @@
       transform: translateY(-130vh);
 
       @media (min-width: 768px) {
+        overflow: unset;
         opacity: 1;
         max-height: unset;
         transform: unset;
