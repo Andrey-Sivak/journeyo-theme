@@ -1,5 +1,9 @@
-import { useBlockProps, RichText } from '@wordpress/block-editor';
-import { Button } from '@wordpress/components';
+import {
+	useBlockProps,
+	RichText,
+	InspectorControls,
+} from '@wordpress/block-editor';
+import { Button, PanelBody, TextControl } from '@wordpress/components';
 import './editor.scss';
 import { Fragment } from '@wordpress/element';
 import ImageUploader from '../../utils/ImageUploader.js';
@@ -7,7 +11,7 @@ import RemoveButtonCross from '../../utils/RemoveButtonCross.js';
 
 const Edit = (props) => {
 	const { attributes, setAttributes } = props;
-	const { title, subtitle, items } = attributes;
+	const { title, subtitle, blockId, items } = attributes;
 
 	const baseClass = 'wp-block-journeyo-benefits-section';
 
@@ -53,6 +57,22 @@ const Edit = (props) => {
 
 	return (
 		<Fragment>
+			<InspectorControls>
+				<PanelBody title="Block Settings">
+					<TextControl
+						label="Block ID"
+						value={blockId}
+						onChange={(newId) => {
+							const sanitizedId = newId
+								.toLowerCase()
+								.replace(/\s+/g, '-')
+								.replace(/[^a-z0-9-]/g, '');
+							setAttributes({ blockId: sanitizedId });
+						}}
+						help="Enter a unique ID for this section (e.g. 'support-section-1'). Use only lowercase letters, numbers and hyphens"
+					/>
+				</PanelBody>
+			</InspectorControls>
 			<div {...blockProps}>
 				<div className={`${baseClass}__wrap`}>
 					<RichText

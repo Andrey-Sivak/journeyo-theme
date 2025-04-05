@@ -15,6 +15,10 @@
       "type": "string",
       "default": ""
     },
+    "blockId": {
+      "type": "string",
+      "default": ""
+    },
     "items": {
       "type": "array",
       "default": [],
