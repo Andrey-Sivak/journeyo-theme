@@ -27,8 +27,13 @@
     width: fit-content;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 auto 3.5vw;
-    font-size: 5vw;
+    margin: 0 auto 4vw;
+    font-size: 7vw;
+
+    @media (min-width: 768px) {
+      margin: 0 auto 3.5vw;
+      font-size: 5vw;
+    }
 
     @media(min-width: 1024px) {
       margin: 0 auto 3.378vw;
@@ -42,9 +47,13 @@
   }
 
   &__items {
-    padding-bottom: 4.324vw;
     overflow: hidden;
     position: relative;
+    padding-bottom: 8vw;
+
+    @media (min-width: 768px) {
+      padding-bottom: 4.324vw;
+    }
 
     @media(min-width: 1480px) {
       padding-bottom: 64px;
@@ -52,8 +61,12 @@
 
     &.jn-items-3 {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2.027vw;
+      gap: 20px;
+
+      @media (min-width: 768px) {
+        gap: 2.027vw;
+        grid-template-columns: repeat(3, 1fr);
+      }
 
       @media(min-width: 1480px) {
         gap: 30px;
@@ -64,8 +77,12 @@
       display: grid;
       max-width: 946px;
       margin: 0 auto;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 2.027vw;
+      gap: 20px;
+
+      @media (min-width: 768px) {
+        gap: 2.027vw;
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       @media(min-width: 1480px) {
         gap: 30px;
@@ -151,10 +168,17 @@
       top: 1px;
       border-radius: 100%;
       overflow: hidden;
-      border: 12px solid #fff;
-      width: 12.31vw;
-      height: 12.31vw;
-      left: 2.9187vw;
+      border: 8px solid #fff;
+      width: 24.62vw;
+      height: 24.62vw;
+      left: 3vw;
+
+      @media (min-width: 768px) {
+        border: 12px solid #fff;
+        width: 12.31vw;
+        height: 12.31vw;
+        left: 2.9187vw;
+      }
 
       @media(min-width: 1200px) {
         width: 9.121vw;
@@ -183,10 +207,17 @@
         z-index: 10;
         top: 0;
         border-radius: 100%;
-        border: 12px solid var(--jn-gray-dark);
-        width: calc(12.495vw + 2px);
-        height: calc(12.495vw + 2px);
+        border: 8px solid var(--jn-gray-dark);
+        width: calc(25vw + 2px);
+        height: calc(25vw + 2px);
         left: calc(2.826vw - 1px);
+
+        @media (min-width: 768px) {
+          border: 12px solid var(--jn-gray-dark);
+          width: calc(12.495vw + 2px);
+          height: calc(12.495vw + 2px);
+          left: calc(2.826vw - 1px);
+        }
 
         @media(min-width: 1200px) {
           width: calc(9.256vw + 2px);
@@ -217,11 +248,18 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border: 12px solid #fff;
       background-color: var(--jn-orange);
-      width: 10.7vw;
-      height: 10.7vw;
-      right: 1.864vw;
+      border: 8px solid #fff;
+      width: 14.445vw;
+      height: 14.445vw;
+      right: 3vw;
+
+      @media (min-width: 768px) {
+        border: 12px solid #fff;
+        width: 10.7vw;
+        height: 10.7vw;
+        right: 1.864vw;
+      }
 
       @media(min-width: 1200px) {
         width: 8.918vw;
@@ -254,10 +292,17 @@
         bottom: 0;
         left: auto;
         border-radius: 100%;
-        border: 12px solid var(--jn-gray-dark);
-        width: calc(10.864vw + 2px);
-        height: calc(10.864vw + 2px);
-        right: calc(1.783vw - 1px);
+        border: 8px solid var(--jn-gray-dark);
+        width: calc(14.666vw + 2px);
+        height: calc(14.666vw + 2px);
+        right: calc(3vw - 1px);
+
+        @media (min-width: 768px) {
+          border: 12px solid var(--jn-gray-dark);
+          width: calc(10.864vw + 2px);
+          height: calc(10.864vw + 2px);
+          right: calc(1.783vw - 1px);
+        }
 
         @media(min-width: 1200px) {
           width: calc(9.054vw + 2px);
@@ -284,8 +329,13 @@
       position: relative;
       z-index: 20;
       border: 1px solid var(--jn-gray-dark);
-      border-radius: 2.364vw;
-      padding: 1.275vw 2.797vw 7.5vw;
+      border-radius: 4vw;
+      padding: 2.5vw 5vw 12vw;
+
+      @media (min-width: 768px) {
+        border-radius: 2.364vw;
+        padding: 1.275vw 2.797vw 7.5vw;
+      }
 
       @media(min-width: 1200px) {
         padding: 0.945vw 2.072vw 7.5vw;
@@ -300,8 +350,13 @@
     &-name {
       font-weight: bold;
       line-height: 1.33;
-      font-size: 2.73vw;
-      margin: 0 0 0 13.59vw;
+      font-size: 4.5vw;
+      margin: 0 0 0 24vw;
+
+      @media (min-width: 768px) {
+        margin: 0 0 0 13.59vw;
+        font-size: 2.73vw;
+      }
 
       @media(min-width: 1200px) {
         font-size: 2.027vw;
@@ -321,8 +376,13 @@
 
     &-location {
       line-height: 1.25;
-      font-size: 1.823vw;
-      margin: 0 0 0 13.59vw;
+      font-size: 4vw;
+      margin: 0 0 0 24vw;
+
+      @media (min-width: 768px) {
+        font-size: 1.823vw;
+        margin: 0 0 0 13.59vw;
+      }
 
       @media(min-width: 1200px) {
         font-size: 1.351vw;
@@ -344,8 +404,13 @@
       margin-bottom: 0;
       font-weight: bold;
       line-height: 1.12;
-      margin-top: 3.378vw;
-      font-size: 2.28vw;
+      margin-top: 12vw;
+      font-size: 18px;
+
+      @media (min-width: 768px) {
+        margin-top: 3.378vw;
+        font-size: 2.28vw;
+      }
 
       @media(min-width: 1200px) {
         font-size: 1.689vw;

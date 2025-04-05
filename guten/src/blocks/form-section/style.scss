@@ -1,14 +1,15 @@
 .wp-block-journeyo-form-section {
   position: relative;
   z-index: 10;
-  padding: 0 16px;
-  margin: 70px 0;
+  padding: 0;
+  margin: 40px 0;
 
   * {
     box-sizing: border-box;
   }
 
   @media (min-width: 768px) {
+    margin: 70px 0;
     padding: 0 20px;
   }
 
@@ -19,8 +20,12 @@
     background-image: linear-gradient(225deg, var(--jn-orange) 38%, var(--jn-yellow) 89%);
     container-type: inline-size;
     container-name: form-wrap;
-    border-radius: 4.391vw;
-    padding: 4.729vw;
+    padding: 10vw 16px;
+
+    @media (min-width: 768px) {
+      padding: 4.729vw;
+      border-radius: 4.391vw;
+    }
 
     @media(min-width: 1024px) {
       max-width: 74.324vw;
@@ -37,10 +42,15 @@
     color: #fff !important;
     font-weight: bold;
     text-align: center;
-    margin-bottom: 4vw;
     margin-top: 0;
     line-height: 1.2;
-    font-size: 5vw;
+    margin-bottom: 7vw;
+    font-size: 7vw;
+
+    @media (min-width: 768px) {
+      font-size: 5vw;
+      margin-bottom: 4vw;
+    }
 
     @media(min-width: 1024px) {
       font-size: 6.66cqw;
@@ -53,13 +63,18 @@
   }
 
   &__arrow {
-    z-index: 20;
-    position: absolute;
-    transform: rotate(147deg);
-    left: auto;
-    top: -8.5vw;
-    width: 44vw;
-    right: -8.697vw;
+    display: none;
+
+    @media (min-width: 768px) {
+      z-index: 20;
+      position: absolute;
+      transform: rotate(147deg);
+      left: auto;
+      top: -8.5vw;
+      width: 44vw;
+      right: -8.697vw;
+      display: block;
+    }
 
     @media(min-width: 1024px) {
       top: -10vw;

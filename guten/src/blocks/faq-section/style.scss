@@ -26,8 +26,14 @@
     width: fit-content;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 auto 3.5vw;
-    font-size: 5vw;
+    margin: 0 auto 4vw;
+    font-size: 7vw;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      margin: 0 auto 3.5vw;
+      font-size: 5vw;
+    }
 
     @media(min-width: 1024px) {
       font-size: 4.324vw;
@@ -55,7 +61,11 @@
 
   &__item {
     border-bottom: 1px solid var(--jn-gray-dark);
-    padding-bottom: 1.5vw;
+    padding-bottom: 20px;
+
+    @media (min-width: 768px) {
+      padding-bottom: 1.5vw;
+    }
 
     @media(min-width: 1024px) {
       padding-bottom: 2.702vw;
@@ -69,7 +79,11 @@
       font-weight: bold;
       line-height: 1.136;
       margin: 0;
-      font-size: 2.5vw;
+      font-size: 18px;
+
+      @media (min-width: 768px) {
+        font-size: 2.5vw;
+      }
 
       @media(min-width: 1024px) {
         font-size: 2.972vw;
@@ -100,7 +114,11 @@
         background-color: transparent;
         left: 0;
         top: 100%;
-        height: 1.5vw;
+        height: 20px;
+
+        @media (min-width: 768px) {
+          height: 1.5vw;
+        }
 
         @media(min-width: 1024px) {
           height: 2.702vw;
@@ -123,7 +141,11 @@
       transition: all ease .5s;
       position: relative;
       display: block;
-      width: 4.5vw;
+      width: 30px;
+
+      @media (min-width: 768px) {
+        width: 4.5vw;
+      }
 
       @media(min-width: 1024px) {
         width: 5.405vw;
@@ -149,8 +171,12 @@
       &-inner {
         color: rgba(0, 0, 0, .5);
         line-height: 1.33;
-        font-size: 18px;
+        font-size: 16px;
         padding: 2vw 2vw 0;
+
+        @media (min-width: 768px) {
+          font-size: 18px;
+        }
 
         @media(min-width: 1024px) {
           padding: 2.702vw 2.837vw 0;

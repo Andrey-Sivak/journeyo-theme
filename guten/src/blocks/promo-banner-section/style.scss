@@ -1,9 +1,13 @@
 .wp-block-journeyo-promo-banner-section {
   overflow: hidden;
   position: relative;
-  padding: 0 16px;
+  padding: 0;
+  margin: 40px 0;
+  background-color: var(--jn-yellow);
 
   @media (min-width: 768px) {
+    background-color: transparent;
+    margin: 0;
     padding: 70px 20px 0;
   }
 
@@ -11,15 +15,24 @@
     max-width: 1620px;
     margin: 0 auto;
     position: relative;
-    padding: 0 20px;
+    padding: 0 16px;
+
+    @media (min-width: 768px) {
+      padding: 0 20px;
+    }
   }
 
   &__bg {
-    width: 100%;
-    position: absolute;
-    z-index: 10;
-    left: 0;
-    top: 0;
+    display: none;
+
+    @media (min-width: 768px) {
+      display: block;
+      width: 100%;
+      position: absolute;
+      z-index: 10;
+      left: 0;
+      top: 0;
+    }
 
     svg {
       display: block;
@@ -39,7 +52,11 @@
     margin: 0 auto;
     position: relative;
     z-index: 20;
-    padding: 15.178vw 0 17.678vw;
+    padding: 30px 0 110vw;
+
+    @media (min-width: 768px) {
+      padding: 15.178vw 0 17.678vw;
+    }
 
     @media(min-width: 1680px) {
       padding: 255px 0 297px;
@@ -58,9 +75,15 @@
     //opacity: 0;
     //animation: floatUpImg 1.5s forwards 1.5s;
 
-    width: 25.1%;
-    left: 17%;
-    top: -4.625%;
+    width: 50.2%;
+    left: 27%;
+    top: 45vw;
+
+    @media (min-width: 768px) {
+      width: 25.1%;
+      left: 17%;
+      top: -4.625%;
+    }
   }
 
   &__image-1 {
@@ -68,9 +91,15 @@
     //opacity: 0;
     //animation: floatUpImg 1.2s forwards 1.2s;
 
-    width: 26.15%;
-    left: 4.951%;
-    top: 27%;
+    width: 52.3%;
+    left: 2%;
+    top: 75vw;
+
+    @media (min-width: 768px) {
+      width: 26.15%;
+      left: 4.951%;
+      top: 27%;
+    }
   }
 
   &__location-mark,
@@ -92,9 +121,15 @@
   &__location-mark {
     position: absolute;
     z-index: 9;
-    width: 4.463%;
-    top: 43.5%;
-    left: 40%;
+    width: 12%;
+    top: 65.5%;
+    left: 79%;
+    
+    @media (min-width: 768px) {
+      width: 4.463%;
+      top: 43.5%;
+      left: 40%;
+    }
 
     @media(min-width: 1024px) {
       top: 45.625%;
@@ -112,9 +147,15 @@
   &__arrow-svg {
     position: absolute;
     z-index: 9;
-    left: -18.06%;
-    width: 58%;
-    top: 18%;
+    left: -23%;
+    width: 100%;
+    top: 53%;
+
+    @media (min-width: 768px) {
+      left: -18.06%;
+      width: 58%;
+      top: 18%;
+    }
 
     @media(min-width: 1024px) {
       width: 70.92%;
@@ -128,8 +169,13 @@
     margin-left: auto;
     container-type: inline-size;
     container-name: promo-block-content-wrap;
-    max-width: 55%;
     width: 100%;
+    text-align: center;
+
+    @media (min-width: 768px) {
+      text-align: left;
+      max-width: 55%;
+    }
 
     @media(min-width: 1024px) {
       max-width: 40.44%;
@@ -140,8 +186,13 @@
     color: #fff !important;
     font-weight: bold;
     line-height: 1.2;
-    font-size: 5.5vw;
-    margin-bottom: 2.976vw;
+    font-size: 7vw;
+    margin-bottom: 5vw;
+
+    @media (min-width: 768px) {
+      font-size: 5.5vw;
+      margin-bottom: 2.976vw;
+    }
 
     @media(min-width: 1024px) {
       font-size: 4.5vw;
@@ -161,7 +212,12 @@
   &__buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
     column-gap: 2.976vw;
+
+    @media (min-width: 768px) {
+      justify-content: flex-start;
+    }
 
     @media(min-width: 1680px) {
       column-gap: 8.62cqw;
@@ -174,7 +230,11 @@
     a {
       //transform: translateY(300px);
       //opacity: 0;
-      width: 43.5%;
+      width: auto;
+
+      @media (min-width: 768px) {
+        width: 43.5%;
+      }
 
       @media(min-width: 1480px) {
         width: auto;

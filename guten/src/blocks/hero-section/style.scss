@@ -1,11 +1,11 @@
 .wp-block-journeyo-hero-section {
   overflow: hidden;
   position: relative;
-  padding: 0 16px;
-  margin-bottom: 50px;
+  margin-bottom: 40px;
 
   @media (min-width: 768px) {
     padding: 0 20px;
+    margin-bottom: 50px;
   }
 
   @media(min-width: 1024px) {
@@ -15,10 +15,16 @@
   &__wrap-out {
     max-width: 1620px;
     position: relative;
-    margin: 20px auto 0;
-    padding: 100px 20px 20px;
+    margin: 0 auto;
+    padding: 90px 20px 20px;
     background-color: var(--jn-yellow);
-    border-radius: 3.5vw 3.5vw 10vw 10vw;
+    border-radius: 0 0 5vw 5vw;
+
+    @media (min-width: 768px) {
+      padding: 100px 20px 20px;
+      border-radius: 3.5vw 3.5vw 10vw 10vw;
+      margin: 20px auto 0;
+    }
 
     @media(min-width: 1024px) {
       padding: 110px 20px 9vw;
@@ -67,15 +73,15 @@
   }
 
   &__header {
-    padding: 20px 16px;
+    padding: 8px 16px;
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     z-index: 1000;
     width: 100%;
-    top: 25px;
 
     @media (min-width: 768px) {
+      top: 25px;
       padding: 20px 40px;
     }
 
@@ -93,7 +99,13 @@
     }
 
     &-logo {
-      width: 18vw;
+      width: 125px;
+      position: relative;
+      z-index: 20;
+
+      @media (min-width: 768px) {
+        width: 18vw;
+      }
 
       @media(min-width: 1024px) {
         width: 15vw;
@@ -115,6 +127,51 @@
       }
     }
 
+    .mob-burger-btn {
+      width: 20px;
+      height: 16px;
+      position: relative;
+      display: block;
+      z-index: 20;
+
+      @media (min-width: 768px) {
+        display: none;
+      }
+
+      &-bottom,
+      &-center,
+      &-top {
+        background-color: #000;
+        transition: all ease-in-out .3s;
+        position: absolute;
+        left: 50%;
+        width: 100%;
+        height: 2px;
+        display: block;
+        max-width: 100%;
+        border-radius: 100%;
+      }
+
+      &-bottom,
+      &-top {
+        transform: translateX(-50%);
+      }
+
+      &-top {
+        top: 0;
+      }
+
+      &-bottom {
+        top: auto;
+        bottom: 0;
+      }
+
+      &-center {
+        top: 50%;
+        transform: translateY(-50%) translateX(-50%);
+      }
+    }
+
     &-button {
       background-color: var(--jn-black);
       border-radius: 30px;
@@ -126,7 +183,19 @@
       font-size: 16px;
       line-height: 18px;
       user-select: none;
-      padding: 12px 30px;
+      padding: 14px 30px;
+      justify-content: center;
+      margin-bottom: 30px;
+      margin-top: 80px;
+      width: 100%;
+
+      @media (min-width: 768px) {
+        justify-content: flex-start;
+        margin-bottom: 0;
+        margin-top: 0;
+        padding: 12px 30px;
+        width: auto;
+      }
 
       @media(min-width: 1024px) {
         padding: 18px 50px;
@@ -134,36 +203,73 @@
     }
 
     &-right {
-      display: flex;
-      align-items: center;
-      column-gap: 16px;
+      z-index: 10;
+      position: absolute;
+      background-color: #fff;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+      padding: 0 16px;
+      opacity: 0;
+      max-height: 0;
+      transition: all ease-in-out .3s;
+      transform: translateY(-130vh);
+
+      @media (min-width: 768px) {
+        opacity: 1;
+        max-height: unset;
+        transform: unset;
+        padding: 0;
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        background-color: transparent;
+        position: relative;
+        left: auto;
+        top: auto;
+        width: auto;
+        height: auto;
+      }
     }
 
     &-langs {
       position: relative;
       cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      column-gap: 10px;
+
+      @media (min-width: 768px) {
+        display: block;
+      }
 
       .wpml-flag {
         height: auto;
       }
 
-      &.active {
+      @media (min-width: 768px) {
 
-        .wp-block-journeyo-hero-section__header-langs-list-wrap {
-          max-height: 300px;
-        }
+        &.active {
 
-        .wp-block-journeyo-hero-section__header-langs-list {
-          opacity: 1;
-        }
+          .wp-block-journeyo-hero-section__header-langs-list-wrap {
+            max-height: 300px;
+          }
 
-        .wp-block-journeyo-hero-section__header-langs-active {
-          border-radius: 6px 6px 0 0;
+          .wp-block-journeyo-hero-section__header-langs-list {
+            opacity: 1;
+          }
+
+          .wp-block-journeyo-hero-section__header-langs-active {
+            border-radius: 6px 6px 0 0;
+          }
         }
       }
 
       &-active {
-        background-color: #fff;
+        background-color: var(--jn-gray);
         border-radius: 6px;
         padding: 4px 10px;
         display: flex;
@@ -171,16 +277,30 @@
         column-gap: 6px;
         font-weight: bold;
         border: 1px solid var(--jn-gray-dark);
+
+        @media (min-width: 768px) {
+          background-color: #fff;
+        }
       }
 
       &-list {
-        opacity: 0;
+        display: flex;
+        align-items: center;
+        column-gap: 10px;
+
+        @media (min-width: 768px) {
+          display: block;
+          opacity: 0;
+        }
 
         &-wrap {
-          position: absolute;
-          overflow: hidden;
-          transition: all ease .3s;
-          max-height: 0;
+
+          @media (min-width: 768px) {
+            position: absolute;
+            overflow: hidden;
+            transition: all ease .3s;
+            max-height: 0;
+          }
         }
 
         a {
@@ -190,16 +310,24 @@
           column-gap: 6px;
           font-weight: bold;
           background-color: #fff;
-          border-left: 1px solid var(--jn-gray-dark);
-          border-right: 1px solid var(--jn-gray-dark);
+          border: 1px solid var(--jn-gray-dark);
+          border-radius: 6px;
 
-          &:hover {
-            background-color: var(--jn-gray);
-          }
+          @media (min-width: 768px) {
+            border-radius: 0;
+            border-left: 1px solid var(--jn-gray-dark);
+            border-right: 1px solid var(--jn-gray-dark);
+            border-bottom: 0;
+            border-top: 0;
 
-          &:last-child {
-            border-radius: 0 0 6px 6px;
-            border-bottom: 1px solid var(--jn-gray-dark);
+            &:hover {
+              background-color: var(--jn-gray);
+            }
+
+            &:last-child {
+              border-radius: 0 0 6px 6px;
+              border-bottom: 1px solid var(--jn-gray-dark);
+            }
           }
         }
       }
@@ -216,8 +344,12 @@
       right: auto;
       top: auto;
       left: auto;
-      width: 80%;
+      width: 90%;
       margin: 0 auto;
+
+      @media (min-width: 768px) {
+        width: 80%;
+      }
 
       @media(min-width: 1024px) {
         margin: 0;
@@ -266,7 +398,11 @@
     //animation: floatUp 1.2s forwards;
     line-height: 1.05;
     margin-bottom: 30px;
-    font-size: 5vw;
+    font-size: 8vw;
+
+    @media (min-width: 768px) {
+      font-size: 5vw;
+    }
 
     @media(min-width: 1024px) {
       font-size: 4.6vw;
@@ -287,11 +423,15 @@
     //animation: floatUp 1.2s forwards .4s;
     margin: 0;
     line-height: 1.26;
-    font-size: 2.5vw;
-    max-width: 80%;
+    font-size: 4.5vw;
 
     br {
       display: none;
+    }
+
+    @media (min-width: 768px) {
+      font-size: 2.5vw;
+      max-width: 80%;
     }
 
     @media(min-width: 1024px) {
@@ -317,11 +457,20 @@
     display: flex;
     align-items: center;
     column-gap: 5.61%;
+    margin-bottom: 20px;
+
+    @media (min-width: 768px) {
+      margin-bottom: 0;
+    }
 
     a {
       //transform: translateY(300px);
       //opacity: 0;
-      width: 30%;
+
+
+      @media (min-width: 768px) {
+        width: 30%;
+      }
 
       @media(min-width: 1200px) {
         width: auto;
@@ -393,5 +542,32 @@
   100% {
     transform: translateY(0) scale(1);
     opacity: 1;
+  }
+}
+
+body.mob-menu-active {
+  overflow: hidden;
+
+  .wp-block-journeyo-hero-section__header-right {
+    opacity: 1;
+    max-height: 120vh;
+    transform: translateY(0);
+  }
+
+  .mob-burger-btn {
+
+    &-center {
+      max-width: 0;
+    }
+
+    &-top {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(135deg);
+    }
+
+    &-bottom {
+      top: 50%;
+      transform: translate(-50%, -50%) rotate(45deg);
+    }
   }
 }

@@ -22,8 +22,13 @@
     width: fit-content;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 auto 3.5vw;
-    font-size: 5vw;
+    margin: 0 auto 4vw;
+    font-size: 7vw;
+
+    @media (min-width: 768px) {
+      margin: 0 auto 3.5vw;
+      font-size: 5vw;
+    }
 
     @media(min-width: 1024px) {
       margin: 0 auto 3.378vw;
@@ -40,9 +45,14 @@
     text-align: center;
     line-height: 1.12;
     margin-top: 0;
-    margin-bottom: 3.378vw;
     color: var(--jn-gray-dark);
-    font-size: 3.2vw;
+    margin-bottom: 4vw;
+    font-size: 4.5vw;
+
+    @media (min-width: 768px) {
+      margin-bottom: 3.378vw;
+      font-size: 3.2vw;
+    }
 
     @media(min-width: 1024px) {
       font-size: 2.7vw;
@@ -56,8 +66,11 @@
 
   &__items {
     display: grid;
-    grid-template-columns: repeat(8, 1fr);
     gap: 2.027vw;
+
+    @media (min-width: 768px) {
+      grid-template-columns: repeat(8, 1fr);
+    }
 
     @media(min-width: 1024px) {
       grid-template-columns: repeat(12, 1fr);
@@ -68,22 +81,31 @@
     }
 
     &.jn-cols-3 {
-      grid-template-columns: repeat(4, 1fr);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(4, 1fr);
+      }
 
       @media(min-width: 1024px) {
         grid-template-columns: repeat(3, 1fr);
       }
 
       .wp-block-journeyo-benefits-section__item {
-        grid-column: span 2;
+
+        @media (min-width: 768px) {
+          grid-column: span 2;
+        }
 
         @media(min-width: 1024px) {
           grid-column: span 1;
         }
 
         &:last-child {
-          grid-column-start: 2;
-          grid-column-end: 4;
+
+          @media (min-width: 768px) {
+            grid-column-start: 2;
+            grid-column-end: 4;
+          }
 
           @media(min-width: 1024px) {
             grid-column-start: unset;
@@ -94,7 +116,10 @@
     }
 
     &.jn-cols-4 {
-      grid-template-columns: repeat(2, 1fr);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
       @media(min-width: 1024px) {
         grid-template-columns: repeat(6, 1fr);
@@ -114,14 +139,20 @@
     }
 
     &.jn-cols-5 {
-      grid-template-columns: repeat(8, 1fr);
+
+      @media (min-width: 768px) {
+        grid-template-columns: repeat(8, 1fr);
+      }
 
       @media(min-width: 1024px) {
         grid-template-columns: repeat(12, 1fr);
       }
 
       .wp-block-journeyo-benefits-section__item {
-        grid-column: span 4;
+
+        @media (min-width: 768px) {
+          grid-column: span 4;
+        }
 
         &:nth-last-child(2) {
 
@@ -132,8 +163,11 @@
         }
 
         &:last-child {
-          grid-column-start: 3;
-          grid-column-end: 7;
+
+          @media (min-width: 768px) {
+            grid-column-start: 3;
+            grid-column-end: 7;
+          }
 
           @media(min-width: 1024px) {
             grid-column-start: 7;
@@ -145,24 +179,26 @@
   }
 
   &__item {
-    margin-top: 1.621vw;
     container-type: inline-size;
     container-name: benefits-item;
     position: relative;
-    padding: 9.46vw 2.02vw 2.7vw;
     text-align: center;
+    $border: 3px;
+    background-clip: padding-box;
+    border: solid $border transparent;
+    border-radius: 5vw;
+    margin-top: 3.5vw;
+    padding: 18.92vw 4.04vw 5.4vw;
+
+    @media (min-width: 768px) {
+      border-radius: 3.378vw;
+      margin-top: 1.621vw;
+      padding: 9.46vw 2.02vw 2.7vw;
+    }
 
     @media(min-width: 1480px) {
       margin-top: 24px;
       padding: 140px 30px 40px;
-    }
-
-    $border: 3px;
-    background-clip: padding-box;
-    border: solid $border transparent;
-    border-radius: 3.378vw;
-
-    @media(min-width: 1480px) {
       border-radius: 50px;
     }
 
@@ -193,8 +229,13 @@
       margin-top: 0;
       line-height: 1.2;
       font-weight: bold;
-      font-size: 3vw;
-      margin-bottom: 1.5vw;
+      font-size: 5vw;
+      margin-bottom: 3.5vw;
+
+      @media (min-width: 768px) {
+        font-size: 3vw;
+        margin-bottom: 1.5vw;
+      }
 
       @media(min-width: 1024px) {
         font-size: 2.364vw;
@@ -210,7 +251,11 @@
     &-subtitle {
       margin: 0;
       line-height: 1.26;
-      font-size: 2.5vw;
+      font-size: 4.3vw;
+
+      @media (min-width: 768px) {
+        font-size: 2.5vw;
+      }
 
       @media(min-width: 1024px) {
         font-size: 2.027vw;
@@ -231,10 +276,17 @@
       justify-content: center;
       left: auto;
       margin: 0;
-      width: 9.46vw;
-      height: 9.46vw;
-      top: -1.621vw;
-      right: -0.945vw;
+      width: 18.92vw;
+      height: 18.92vw;
+      top: -3.242vw;
+      right: -1.89vw;
+
+      @media (min-width: 768px) {
+        top: -1.621vw;
+        right: -.945vw;
+        width: 9.46vw;
+        height: 9.46vw;
+      }
 
       @media(min-width: 1480px) {
         width: 35.71cqw;
@@ -262,10 +314,17 @@
       border: 3px solid var(--jn-orange);
       background-color: #fff;
       border-radius: 100%;
-      width: 11.554vw;
-      height: 11.554vw;
-      top: -2.567vw;
-      right: -1.89vw;
+      width: 23.108vw;
+      height: 23.108vw;
+      top: -5.134vw;
+      right: -3.78vw;
+
+      @media (min-width: 768px) {
+        width: 11.554vw;
+        height: 11.554vw;
+        top: -2.567vw;
+        right: -1.89vw;
+      }
 
       @media(min-width: 1480px) {
         width: 43.62cqw;
@@ -291,8 +350,13 @@
       left: auto;
       width: 50%;
       background-color: #fff;
-      right: -2.7vw;
-      height: 2.7vw;
+      right: -5.4vw;
+      height: 5.4vw;
+
+      @media (min-width: 768px) {
+        right: -2.7vw;
+        height: 2.7vw;
+      }
 
       @media(min-width: 1480px) {
         right: -40px;
@@ -307,8 +371,13 @@
       left: 100%;
       background-color: #fff;
       height: 50%;
-      top: -2.7vw;
-      width: 2.027vw;
+      top: -5.4vw;
+      width: 4.054vw;
+
+      @media (min-width: 768px) {
+        top: -2.7vw;
+        width: 2.027vw;
+      }
 
       @media(min-width: 1480px) {
         top: -40px;

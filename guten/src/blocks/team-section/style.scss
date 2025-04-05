@@ -32,8 +32,13 @@
     width: fit-content;
     font-weight: bold;
     line-height: 1.2;
-    margin: 0 auto 3.5vw;
-    font-size: 5vw;
+    margin: 0 auto 4vw;
+    font-size: 7vw;
+
+    @media (min-width: 768px) {
+      margin: 0 auto 3.5vw;
+      font-size: 5vw;
+    }
 
     @media(min-width: 1024px) {
       margin: 0 auto 3.378vw;
@@ -66,7 +71,11 @@
     position: relative;
     container-type: inline-size;
     container-name: team-member;
-    padding-top: 5.837vw;
+    padding-top: 11.674vw;
+
+    @media (min-width: 768px) {
+      padding-top: 5.837vw;
+    }
 
     @media(min-width: 1024px) {
       padding-top: 4.324vw;
@@ -79,8 +88,13 @@
     &-wrap {
       position: relative;
       background-color: var(--jn-gray);
-      border-radius: 4.054vw;
-      padding: 1.367vw 2.28vw 3.647vw;
+      border-radius: 6vw;
+      padding: 2.734vw 4.56vw 7.294vw;
+
+      @media (min-width: 768px) {
+        border-radius: 4.054vw;
+        padding: 1.367vw 2.28vw 3.647vw;
+      }
 
       @media(min-width: 1024px) {
         padding: 1.013vw 1.689vw 2.702vw;
@@ -101,10 +115,17 @@
       z-index: 20;
       border-radius: 100%;
       left: 0;
-      border: 2.736vw solid #fff;
-      top: -5.837vw;
-      width: 20.979vw;
-      height: 20.979vw;
+      border: 4.104vw solid #fff;
+      top: -8.755vw;
+      width: 31.45vw;
+      height: 31.45vw;
+
+      @media (min-width: 768px) {
+        border: 2.736vw solid #fff;
+        top: -5.837vw;
+        width: 20.979vw;
+        height: 20.979vw;
+      }
 
       @media(min-width: 1024px) {
         border: 2.027vw solid #fff;
@@ -158,8 +179,13 @@
       width: fit-content;
       margin-top: 0;
       margin-bottom: 10px;
-      margin-left: 23%;
-      font-size: 3.8vw;
+      margin-left: 36%;
+      font-size: 5.5vw;
+
+      @media (min-width: 768px) {
+        margin-left: 23%;
+        font-size: 3.8vw;
+      }
 
       @media(min-width: 1024px) {
         margin-left: 35%;
@@ -184,8 +210,13 @@
       margin: 0;
       line-height: 1.33;
       font-weight: bold;
-      margin-left: 23%;
-      font-size: 3vw;
+      margin-left: 36%;
+      font-size: 5vw;
+
+      @media (min-width: 768px) {
+        margin-left: 23%;
+        font-size: 3vw;
+      }
 
       @media(min-width: 1024px) {
         margin-left: 35%;
@@ -209,8 +240,13 @@
     &-text {
       margin-bottom: 0;
       line-height: 1.25;
-      font-size: 20px;
-      margin-top: 45px;
+      font-size: 18px;
+      margin-top: 30px;
+
+      @media (min-width: 768px) {
+        font-size: 20px;
+        margin-top: 45px;
+      }
 
       @media(min-width: 1200px) {
         margin-top: 30px;

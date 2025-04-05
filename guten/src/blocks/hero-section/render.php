@@ -40,6 +40,12 @@ $base_class = 'wp-block-journeyo-hero-section';
             </div>
         <?php endif; ?>
 
+        <div class="mob-burger-btn">
+            <div class="mob-burger-btn-top"></div>
+            <div class="mob-burger-btn-center"></div>
+            <div class="mob-burger-btn-bottom"></div>
+        </div>
+
         <div class="<?php echo $base_class . '__header-right'; ?>">
             <?php if ($button_text) : ?>
                 <button class="<?php echo $base_class . '__header-button'; ?>">

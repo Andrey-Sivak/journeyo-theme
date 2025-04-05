@@ -1,4 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
+	const monMenuBtn = document.querySelector('.mob-burger-btn');
+
 	const langs = document.querySelector(
 		'.wp-block-journeyo-hero-section__header-langs',
 	);
@@ -28,4 +30,11 @@ document.addEventListener('DOMContentLoaded', () => {
 			langs.classList.remove('active');
 		}
 	});
+
+	if (monMenuBtn) {
+		monMenuBtn.addEventListener('click', (e) => {
+			e.preventDefault();
+			document.body.classList.toggle('mob-menu-active');
+		});
+	}
 });
