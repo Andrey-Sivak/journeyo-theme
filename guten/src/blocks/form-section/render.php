@@ -348,13 +348,13 @@ $loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width=
         <div class="<?php echo $base_class . '__block-big-lt'; ?>"></div>
         <div class="<?php echo $base_class . '__block-small-rt'; ?>"></div>
         <div class="<?php echo $base_class . '__block-small-lt'; ?>"></div>
-        <div class="jn-form-loading" aria-live="polite"
-             aria-label="<?php echo esc_attr__('Loading form submission', 'jn'); ?>">
+        <div class="jn-form-loading" role="status" aria-live="polite">
             <?php echo $loading_svg; ?>
+            <span class="screen-reader-text"><?php echo esc_html__('Loading form submission', 'jn'); ?></span>
         </div>
-        <div class="jn-form-success" aria-live="polite"
-             aria-label="<?php echo esc_attr__('Form submitted successfully', 'jn'); ?>">
+        <div class="jn-form-success" role="status" aria-live="polite">
             <?php echo $success_svg; ?>
+            <span class="screen-reader-text"><?php echo esc_html__('Form submitted successfully', 'jn'); ?></span>
         </div>
         <?php if (!empty($title)) : ?>
             <h2 class="<?php echo $base_class . '__title jn-animate'; ?>" id="form-section-title">
