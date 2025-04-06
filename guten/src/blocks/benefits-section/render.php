@@ -12,7 +12,7 @@ $base_class = 'wp-block-journeyo-benefits-section';
 
 <section <?php echo $wrapper_attributes; ?> role="region"
                                             aria-labelledby="<?php echo esc_attr($block_id . '-title'); ?>"
-                                            itemprop="description"
+                                            itemprop="additionalProperty"
 >
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
@@ -49,7 +49,7 @@ $base_class = 'wp-block-journeyo-benefits-section';
             <ul class="<?php echo $items_classes; ?>" role="list">
                 <?php foreach ($items as $index => $item) : ?>
                     <li class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
-                             itemtype="https://schema.org/Feature">
+                             itemtype="https://schema.org/PropertyValue">
                         <div class="<?php echo $base_class . '__item-content'; ?>">
                             <?php if (!empty($item['title'])) : ?>
                                 <h4 class="<?php echo $base_class . '__item-title'; ?>" itemprop="name">
@@ -58,7 +58,7 @@ $base_class = 'wp-block-journeyo-benefits-section';
                             <?php endif; ?>
 
                             <?php if (!empty($item['subtitle'])) : ?>
-                                <p class="<?php echo $base_class . '__item-subtitle'; ?>" itemprop="description">
+                                <p class="<?php echo $base_class . '__item-subtitle'; ?>" itemprop="value">
                                     <?php echo wp_kses_post($item['subtitle']); ?>
                                 </p>
                             <?php endif; ?>
