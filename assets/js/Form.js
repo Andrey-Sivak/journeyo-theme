@@ -1,7 +1,7 @@
 class Form {
 	form = null;
 	submitBtn = null;
-	formUID = null;
+	// formUID = null;
 	loaderContainer = null;
 	successContainer = null;
 
@@ -13,7 +13,7 @@ class Form {
 		if (!this.form) return;
 
 		this.submitBtn = this.form.querySelector('input[type="submit"]');
-		this.formUID = this.form.getAttribute('action').substring(1);
+		// this.formUID = this.form.getAttribute('action').substring(1);
 		this.loaderContainer = this.form.querySelector('.jn-form-loading');
 		this.successContainer = this.form.querySelector('.jn-form-success');
 
@@ -26,23 +26,20 @@ class Form {
 		});
 
 		document.addEventListener('wpcf7mailsent', (e) => {
-			const formUID = e.detail.apiResponse.into;
-
-			if (formUID !== this.formUID) return;
+			// const formUID = e.detail.apiResponse.into;
+			// if (formUID !== this.formUID) return;
 
 			this.handleSuccess();
 		});
 		document.addEventListener('wpcf7mailfailed', (e) => {
-			const formUID = e.detail.apiResponse.into;
-
-			if (formUID !== this.formUID) return;
+			// const formUID = e.detail.apiResponse.into;
+			// if (formUID !== this.formUID) return;
 
 			this.block.classList.remove('loading');
 		});
 		document.addEventListener('wpcf7invalid', (e) => {
-			const formUID = e.detail.apiResponse.into;
-
-			if (formUID !== this.formUID) return;
+			// const formUID = e.detail.apiResponse.into;
+			// if (formUID !== this.formUID) return;
 
 			this.block.classList.remove('loading');
 		});
