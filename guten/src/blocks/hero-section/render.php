@@ -14,11 +14,7 @@ $base_class = 'wp-block-journeyo-hero-section';
 <header class="<?php echo $base_class . '__header'; ?>" role="banner" itemscope itemtype="https://schema.org/WPHeader">
     <div class="<?php echo $base_class . '__header-wrap'; ?>">
         <?php if ($logo['id']) : ?>
-            <div
-                    class="<?php echo $base_class . '__header-logo'; ?>"
-                    itemscope
-                    itemtype="https://schema.org/Organization"
-            >
+            <div class="<?php echo $base_class . '__header-logo'; ?>">
                 <a href="<?php echo get_home_url(); ?>"
                    title="<?php echo esc_html(get_bloginfo('name')); ?>"
                    aria-label="<?php echo esc_attr__('Go to homepage', 'jn') ?>" itemprop="url">
