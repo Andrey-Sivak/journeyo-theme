@@ -9,6 +9,8 @@ $base_class = 'wp-block-journeyo-team-section';
 <section <?php echo $wrapper_attributes; ?> role="region"
                                             aria-labelledby="team-section-title"
                                             itemprop="founder"
+                                            itemscope
+                                            itemtype="https://schema.org/Person"
 >
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
