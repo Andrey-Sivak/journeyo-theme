@@ -22,7 +22,7 @@ $base_class = 'wp-block-journeyo-faq-section';
         <?php endif; ?>
 
         <?php if (!empty($items)) : ?>
-            <dl class="<?php echo $base_class . '__items'; ?>" role="list">
+            <dl class="<?php echo $base_class . '__items'; ?>">
                 <?php foreach ($items as $index => $item) : ?>
                     <dt class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
                         itemtype="https://schema.org/Question" itemprop="mainEntity"
