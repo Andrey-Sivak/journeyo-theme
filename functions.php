@@ -7,14 +7,14 @@
  *
  * @package journeyo
  */
- 
+
 declare(strict_types=1);
 
 /**
  * The journeyo functions and definitions
  */
 
-define('_JN_VERSION', '1.0.21');
+define('_JN_VERSION', '1.0.22');
 
 /**
  * Sets up theme defaults and registers support for various WordPress features.
