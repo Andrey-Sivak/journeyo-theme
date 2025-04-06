@@ -35,7 +35,7 @@ $base_class = 'wp-block-journeyo-faq-section';
                                         aria-controls="faq-answer-<?php echo esc_attr($index); ?>"
                                         aria-label="<?php echo esc_attr(sprintf(__('Expand %s', 'jn'), $item['question'])); ?>"
                                 >
-                                    <span><?php echo wp_kses_post($item['question']); ?></span>
+                                    <span itemprop="name"><?php echo wp_kses_post($item['question']); ?></span>
                                     <span class="<?php echo $base_class . '__item-icon'; ?>">
                                         <svg width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true">
                                             <path d="M23.3334 31.6665L40 48.3332L45.3457 42.9875M56.6667 31.6665L52.4162 35.9171"
@@ -51,7 +51,6 @@ $base_class = 'wp-block-journeyo-faq-section';
                             <dd
                                     class="<?php echo $base_class . '__item-answer'; ?>"
                                     id="faq-answer-<?php echo esc_attr($index); ?>"
-                                    itemscope
                                     itemtype="https://schema.org/Answer"
                                     itemprop="acceptedAnswer"
                             >
