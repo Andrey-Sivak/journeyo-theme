@@ -8,7 +8,7 @@ $wrapper_attributes = get_block_wrapper_attributes([
 ]);
 $base_class = 'wp-block-journeyo-form-section';
 
-$svg_arrow = '<svg viewBox="0 0 786 401" fill="none" preserveAspectRatio="xMidYMid slice">
+$svg_arrow = '<svg aria-hidden="true" viewBox="0 0 786 401" fill="none" preserveAspectRatio="xMidYMid slice">
                 <path d="M0.196882 321.504C2.34332 326.724 4.88208 331.781 7.76592 336.634C7.8894 336.842 8.16064 336.911 8.36854 336.788C8.57645 336.665 8.64583 336.393 8.52234 336.186L8.52088 336.183C5.62056 331.388 3.06191 326.386 0.888614 321.219C0.807659 321.029 0.588022 320.939 0.397551 321.019C0.208107 321.095 0.117769 321.314 0.196882 321.504Z" />
                 <path d="M8.22432 335.973C7.98468 335.928 7.75517 336.086 7.71065 336.326C7.66613 336.565 7.82371 336.795 8.06335 336.839C8.30299 336.884 8.53258 336.726 8.5771 336.487C8.62162 336.247 8.46396 336.017 8.22432 335.973Z" />
                 <path d="M8.22432 335.973C7.98468 335.928 7.75517 336.086 7.71065 336.326C7.66613 336.565 7.82371 336.795 8.06335 336.839C8.30299 336.884 8.53258 336.726 8.5771 336.487C8.62162 336.247 8.46396 336.017 8.22432 335.973Z" />
@@ -238,13 +238,13 @@ $svg_arrow = '<svg viewBox="0 0 786 401" fill="none" preserveAspectRatio="xMidYM
                 <path d="M785.453 145.165C773.416 144.963 757.831 142.872 747.13 138.617L759.859 154.172L759.687 174.26C765.361 164.24 776.196 152.856 785.453 145.165Z" />
             </svg>';
 
-$success_svg = '<svg x="0px" y="0px" viewBox="0 0 117.72 117.72" fill="#ffffff" class="success">
+$success_svg = '<svg x="0px" y="0px" viewBox="0 0 117.72 117.72" fill="#ffffff" class="success" aria-hidden="true">
     <g>
         <path class="st0"
               d="M58.86,0c9.13,0,17.77,2.08,25.49,5.79c-3.16,2.5-6.09,4.9-8.82,7.21c-5.2-1.89-10.81-2.92-16.66-2.92 c-13.47,0-25.67,5.46-34.49,14.29c-8.83,8.83-14.29,21.02-14.29,34.49c0,13.47,5.46,25.66,14.29,34.49 c8.83,8.83,21.02,14.29,34.49,14.29s25.67-5.46,34.49-14.29c8.83-8.83,14.29-21.02,14.29-34.49c0-3.2-0.31-6.34-0.9-9.37 c2.53-3.3,5.12-6.59,7.77-9.85c2.08,6.02,3.21,12.49,3.21,19.22c0,16.25-6.59,30.97-17.24,41.62 c-10.65,10.65-25.37,17.24-41.62,17.24c-16.25,0-30.97-6.59-41.62-17.24C6.59,89.83,0,75.11,0,58.86 c0-16.25,6.59-30.97,17.24-41.62S42.61,0,58.86,0L58.86,0z M31.44,49.19L45.8,49l1.07,0.28c2.9,1.67,5.63,3.58,8.18,5.74 c1.84,1.56,3.6,3.26,5.27,5.1c5.15-8.29,10.64-15.9,16.44-22.9c6.35-7.67,13.09-14.63,20.17-20.98l1.4-0.54H114l-3.16,3.51 C101.13,30,92.32,41.15,84.36,52.65C76.4,64.16,69.28,76.04,62.95,88.27l-1.97,3.8l-1.81-3.87c-3.34-7.17-7.34-13.75-12.11-19.63 c-4.77-5.88-10.32-11.1-16.79-15.54L31.44,49.19L31.44,49.19z"/>
     </g>
 </svg>';
-$loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200" height="200" class="loader"
+$loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width="200" height="200" class="loader" aria-hidden="true"
      style="shape-rendering: auto; display: block; background: transparent;">
     <g>
         <g transform="translate(80,50)">
@@ -332,7 +332,14 @@ $loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width=
 </svg>';
 ?>
 
-<section <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?>
+        role="region"
+        aria-labelledby="form-section-title"
+        itemprop="contactPoint"
+        itemscope
+        itemtype="https://schema.org/ContactPoint"
+>
+    <meta itemprop="contactType" content="customer support">
     <div class="<?php echo $base_class . '__arrow'; ?>">
         <?php echo $svg_arrow; ?>
     </div>
@@ -341,16 +348,22 @@ $loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width=
         <div class="<?php echo $base_class . '__block-big-lt'; ?>"></div>
         <div class="<?php echo $base_class . '__block-small-rt'; ?>"></div>
         <div class="<?php echo $base_class . '__block-small-lt'; ?>"></div>
-        <div class="jn-form-loading"><?php echo $loading_svg; ?></div>
-        <div class="jn-form-success"><?php echo $success_svg; ?></div>
+        <div class="jn-form-loading" aria-live="polite"
+             aria-label="<?php echo esc_attr__('Loading form submission', 'jn'); ?>">
+            <?php echo $loading_svg; ?>
+        </div>
+        <div class="jn-form-success" aria-live="polite"
+             aria-label="<?php echo esc_attr__('Form submitted successfully', 'jn'); ?>">
+            <?php echo $success_svg; ?>
+        </div>
         <?php if (!empty($title)) : ?>
-            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>">
+            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>" id="form-section-title">
                 <?php echo wp_kses_post($title); ?>
             </h2>
         <?php endif; ?>
         <?php if (!empty($form_shortcode)) : ?>
-            <div class="<?php echo $base_class . '__form'; ?>">
-                <svg width="652" height="81" viewBox="0 0 652 81" fill="none">
+            <div class="<?php echo $base_class . '__form'; ?>" role="form">
+                <svg width="652" height="81" viewBox="0 0 652 81" fill="none" aria-hidden="true">
                     <rect x="0.75" y="0.75" width="650.5" height="79.5" rx="39.75" fill="white" stroke="#141416"
                           stroke-width="1.5" stroke-dasharray="20 20"/>
                 </svg>

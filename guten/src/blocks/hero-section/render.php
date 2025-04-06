@@ -11,7 +11,7 @@ $wrapper_attributes = get_block_wrapper_attributes();
 $base_class = 'wp-block-journeyo-hero-section';
 ?>
 
-<header class="<?php echo $base_class . '__header'; ?>">
+<header class="<?php echo $base_class . '__header'; ?>" role="banner" itemscope itemtype="https://schema.org/WPHeader">
     <div class="<?php echo $base_class . '__header-wrap'; ?>">
         <?php if ($logo['id']) : ?>
             <div
@@ -19,37 +19,50 @@ $base_class = 'wp-block-journeyo-hero-section';
                     itemscope
                     itemtype="https://schema.org/Organization"
             >
-                <meta itemprop="name" content="<?php echo esc_html(get_bloginfo('name')); ?>">
-                <meta itemprop="url" content="<?php echo get_home_url(); ?>">
-                <figure>
-                    <a href="<?php echo get_home_url(); ?>"
-                       aria-label="<?php echo esc_attr__('Go to homepage', 'jn') ?>" itemprop="url">
+                <a href="<?php echo get_home_url(); ?>"
+                   title="<?php echo esc_html(get_bloginfo('name')); ?>"
+                   aria-label="<?php echo esc_attr__('Go to homepage', 'jn') ?>" itemprop="url">
+                    <figure itemscope itemtype="https://schema.org/ImageObject">
                         <?php
                         get_template_part('/template-parts/advanced-image', null, array(
                             'img_id' => $logo['id'],
-                            'class' => ''
+                            'class' => '',
+                            'is_schema' => true,
+                            'decorative' => false,
                         ));
                         ?>
-                    </a>
-                    <figcaption itemprop="description" style="display:none;">
-                        <?php echo esc_html(get_bloginfo('description')); ?>
-                    </figcaption>
-                </figure>
+                        <figcaption itemprop="description" class="jn-visually-hidden">
+                            <?php echo esc_html(get_bloginfo('description')); ?>
+                        </figcaption>
+                    </figure>
+                </a>
             </div>
         <?php endif; ?>
 
-        <div class="mob-burger-btn">
-            <div class="mob-burger-btn-top"></div>
-            <div class="mob-burger-btn-center"></div>
-            <div class="mob-burger-btn-bottom"></div>
-        </div>
+        <button class="mob-burger-btn"
+                type="button"
+                aria-expanded="false"
+                aria-controls="mobile-menu"
+                title="<?php echo esc_attr__('Toggle mobile navigation', 'jn'); ?>">
+            <span class="jn-visually-hidden"><?php echo esc_html__('Menu', 'jn'); ?></span>
+            <span class="mob-burger-btn-top"></span>
+            <span class="mob-burger-btn-center"></span>
+            <span class="mob-burger-btn-bottom"></span>
+        </button>
 
         <div class="<?php echo $base_class . '__header-right'; ?>">
             <?php if ($button_text) : ?>
                 <a href="#jn-contact-form"
-                   class="<?php echo $base_class . '__header-button'; ?>">
+                   class="<?php echo $base_class . '__header-button'; ?>"
+                   aria-label="<?php echo esc_attr(sprintf(__('Go to %s form', 'jn'), $button_text)); ?>"
+                   title="<?php echo esc_attr($button_text); ?>"
+                   itemprop="contactPoint"
+                   itemscope
+                   itemtype="https://schema.org/ContactPoint"
+                >
                     <span><?php echo esc_html($button_text); ?></span>
-                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                    <meta itemprop="contactType" content="customer support">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true">
                         <path
                                 d="M3.431 2.56899L12.569 2.56899L12.569 11.707M11.9344 3.20357L2.6695 12.4685"
                                 stroke="white"
@@ -65,30 +78,36 @@ $base_class = 'wp-block-journeyo-hero-section';
 
             if (!empty($languages)) :
                 ?>
-                <div class="<?php echo $base_class . '__header-langs'; ?>">
+                <div class="<?php echo $base_class . '__header-langs'; ?>"
+                     aria-label="<?php echo esc_attr__('Language switcher', 'jn'); ?>"
+                >
                     <div class="<?php echo $base_class . '__header-langs-active'; ?>">
-                        <?php
-                        foreach ($languages as $lang) {
-                            if ($lang['active']) {
+                        <?php foreach ($languages as $lang) : ?>
+                            <?php if ($lang['active']) {
                                 if (!empty($lang['country_flag_url'])) {
-                                    echo '<span class="wpml-lang-code">' . esc_html(strtoupper($lang['language_code'])) . '</span>';
-                                    echo '<img src="' . esc_url($lang['country_flag_url']) . '" alt="' . esc_attr($lang['translated_name']) . '" class="wpml-flag">';
+                                    echo '<span class="wpml-lang-code" lang="' . esc_attr($lang['language_code']) . '">' . esc_html(strtoupper($lang['language_code'])) . '</span>';
+                                    echo '<img src="' . esc_url($lang['country_flag_url']) . '" width="18" height="12" loading="lazy" alt="' . esc_attr($lang['translated_name']) . '" class="wpml-flag">';
                                 }
                             }
-                        }
+                        endforeach;
                         ?>
                     </div>
                     <div class="<?php echo $base_class . '__header-langs-list-wrap'; ?>">
-                        <div class="<?php echo $base_class . '__header-langs-list'; ?>">
+                        <ul class="<?php echo $base_class . '__header-langs-list'; ?>">
                             <?php
                             foreach ($languages as $lang) :
                                 if (!$lang['active']) :
                                     if (!empty($lang['country_flag_url'])) : ?>
                                         <a href="<?php echo esc_url($lang['url']); ?>"
-                                           title="<?php echo esc_attr($lang['translated_name']); ?>">
+                                           title="<?php echo esc_attr($lang['translated_name']); ?>"
+                                           lang="<?php echo esc_attr($lang['language_code']); ?>"
+                                        >
                                             <span><?php echo esc_html(strtoupper($lang['language_code'])); ?></span>
                                             <img src="<?php echo esc_url($lang['country_flag_url']); ?>"
                                                  alt="<?php echo esc_attr($lang['translated_name']); ?>"
+                                                 loading="lazy"
+                                                 width="18"
+                                                 height="12"
                                                  class="wpml-flag">
                                         </a>
                                     <?php
@@ -96,7 +115,7 @@ $base_class = 'wp-block-journeyo-hero-section';
                                 endif;
                             endforeach;
                             ?>
-                        </div>
+                        </ul>
                     </div>
                 </div>
             <?php endif; ?>
@@ -104,11 +123,14 @@ $base_class = 'wp-block-journeyo-hero-section';
     </div>
 </header>
 
-<main>
-    <section <?php echo $wrapper_attributes; ?>>
+<main role="main" itemscope itemtype="https://schema.org/WebPage" itemprop="mainEntity"
+      aria-label="<?php echo esc_attr__('Primary content', 'jn'); ?>" tabindex="-1">
+    <meta itemprop="name" content="<?php echo esc_html(get_the_title()); ?>">
+    <meta itemprop="url" content="<?php echo esc_url(get_permalink()); ?>">
+    <section <?php echo $wrapper_attributes; ?> role="region" aria-labelledby="hero-title" itemprop="mainContentOfPage">
         <div class="<?php echo $base_class . '__wrap-out'; ?>">
             <div class="<?php echo $base_class . '__bg'; ?>">
-                <svg viewBox="0 0 1620 800" fill="none">
+                <svg viewBox="0 0 1620 800" fill="none" aria-hidden="true">
                     <path d="M1620 60C1620 26.8629 1593.14 0 1560 0H60C26.8629 0 0 26.8629 0 60V740C0 773.137 26.863 800 60.0001 800H670.555C690.502 800 709.146 790.086 720.299 773.548L770.946 698.451C782.099 681.914 800.743 672 820.69 672H1560C1593.14 672 1620 645.137 1620 612V60Z"/>
                 </svg>
             </div>
@@ -116,7 +138,7 @@ $base_class = 'wp-block-journeyo-hero-section';
                 <div class="<?php echo $base_class . '__content'; ?>">
                     <div class="<?php echo $base_class . '__content-text'; ?>">
                         <?php if (!empty($title)) : ?>
-                            <h1 class="<?php echo $base_class . '__title'; ?>">
+                            <h1 class="<?php echo $base_class . '__title'; ?>" id="hero-title">
                                 <?php echo wp_kses_post($title); ?>
                             </h1>
                         <?php endif; ?>
@@ -126,9 +148,15 @@ $base_class = 'wp-block-journeyo-hero-section';
                             </p>
                         <?php endif; ?>
 
-                        <div class="<?php echo $base_class . '__buttons'; ?>">
-                            <a href="<?php echo esc_url($appstore_link); ?>" target="_blank">
-                                <svg width="219" height="58" viewBox="0 0 219 58" fill="none">
+                        <div class="<?php echo $base_class . '__buttons'; ?>" itemscope
+                             itemtype="https://schema.org/SoftwareApplication">
+                            <meta itemprop="name" content="<?php echo esc_html(get_bloginfo('name')); ?>">
+                            <meta itemprop="operatingSystem" content="iOS">
+                            <a href="<?php echo esc_url($appstore_link); ?>" target="_blank" rel="noopener noreferrer"
+                               aria-label="<?php echo esc_attr__('Download on the App Store', 'jn'); ?>"
+                               itemprop="downloadUrl"
+                            >
+                                <svg aria-hidden="true" width="219" height="58" viewBox="0 0 219 58" fill="none">
                                     <rect width="219" height="58" rx="29" fill="#141416"/>
                                     <path
                                             d="M73.3863 30.0811C73.4033 28.7779 73.7537 27.5001 74.4049 26.3667C75.0561 25.2332 75.9869 24.2809 77.1107 23.5983C76.3968 22.591 75.4549 21.762 74.3599 21.1772C73.265 20.5924 72.047 20.2678 70.8029 20.2294C68.149 19.9542 65.5761 21.7983 64.2237 21.7983C62.8451 21.7983 60.7629 20.2567 58.5206 20.3023C57.0703 20.3486 55.6568 20.7652 54.418 21.5116C53.1791 22.2581 52.157 23.3088 51.4514 24.5615C48.3949 29.7895 50.6748 37.473 53.6027 41.699C55.0676 43.7683 56.7797 46.0798 59.0199 45.9979C61.2121 45.9081 62.0308 44.6169 64.6769 44.6169C67.2985 44.6169 68.0667 45.9979 70.3523 45.9458C72.7046 45.9081 74.1867 43.8672 75.6002 41.7783C76.6528 40.3038 77.4627 38.6742 78 36.9498C76.6334 36.3788 75.4671 35.4229 74.6467 34.2015C73.8262 32.98 73.3879 31.547 73.3863 30.0811Z"
@@ -221,8 +249,13 @@ $base_class = 'wp-block-journeyo-hero-section';
                                     />
                                 </svg>
                             </a>
-                            <a href="<?php echo esc_url($google_play_link); ?>" target="_blank">
-                                <svg width="219" height="58" viewBox="0 0 219 58" fill="none">
+                            <meta itemprop="operatingSystem" content="Android">
+                            <a href="<?php echo esc_url($google_play_link); ?>" target="_blank"
+                               rel="noopener noreferrer"
+                               aria-label="<?php echo esc_attr__('Get it on Google Play', 'jn'); ?>"
+                               itemprop="downloadUrl"
+                            >
+                                <svg aria-hidden="true" width="219" height="58" viewBox="0 0 219 58" fill="none">
                                     <rect width="219" height="58" rx="29" fill="#141416"/>
                                     <path
                                             d="M64.0069 28.2374L50.128 43.1751C50.1293 43.1777 50.1293 43.1817 50.1306 43.1843C50.5569 44.8063 52.0168 46 53.7506 46C54.444 46 55.0945 45.8096 55.6524 45.4765L55.6968 45.4501L71.3185 36.309L64.0069 28.2374Z"
@@ -275,11 +308,14 @@ $base_class = 'wp-block-journeyo-hero-section';
                     </div>
 
                     <?php if ($image['id']) : ?>
-                        <figure class="<?php echo $base_class . '__content-image'; ?>">
+                        <figure class="<?php echo $base_class . '__content-image'; ?>" itemscope
+                                itemtype="https://schema.org/ImageObject">
                             <?php
                             get_template_part('/template-parts/advanced-image', null, array(
                                 'img_id' => $image['id'],
-                                'class' => ''
+                                'class' => '',
+                                'is_schema' => true,
+                                'decorative' => false,
                             ));
                             ?>
                         </figure>

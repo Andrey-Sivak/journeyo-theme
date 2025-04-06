@@ -7,23 +7,27 @@ $wrapper_attributes = get_block_wrapper_attributes();
 $base_class = 'wp-block-journeyo-plan-section';
 ?>
 
-<section <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?> role="region"
+                                            aria-labelledby="plan-section-title"
+                                            itemprop="description"
+>
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
         <?php if (!empty($title)) : ?>
-            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>">
+            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>" id="plan-section-title">
                 <?php echo wp_kses_post($title); ?>
             </h2>
         <?php endif; ?>
         <?php if (!empty($subtitle)) : ?>
-            <p class="<?php echo $base_class . '__subtitle jn-animate'; ?>">
+            <h3 class="<?php echo $base_class . '__subtitle jn-animate'; ?>">
                 <?php echo wp_kses_post($subtitle); ?>
-            </p>
+            </h3>
         <?php endif; ?>
 
         <?php if (!empty($items)) : ?>
             <div class="<?php echo $base_class . '__items'; ?>">
-                <svg viewBox="0 0 1434 452" fill="none" class="<?php echo $base_class . '__items-bg'; ?>">
+                <svg viewBox="0 0 1434 452" fill="none" class="<?php echo $base_class . '__items-bg'; ?>"
+                     aria-hidden="true">
                     <path d="M535.165 314.633L579.098 390.731C592.714 414.314 617.876 428.842 645.107 428.842H791.032C818.263 428.842 843.425 414.314 857.04 390.731L1048.17 61.7528C1061.79 38.1626 1086.95 23.6357 1114.19 23.6357H1260.12C1287.34 23.6357 1312.5 38.1626 1326.12 61.7528L1399.08 188.126C1412.7 211.717 1412.7 240.77 1399.08 264.349L1326.12 390.734C1312.5 414.313 1287.34 428.84 1260.12 428.84H1114.19C1086.95 428.84 1061.79 414.313 1048.17 390.734L1005.04 315.546M898.649 137.844L854.715 61.7458C841.1 38.1626 815.938 23.6345 788.707 23.6345H642.782C615.551 23.6345 590.389 38.1626 576.773 61.7458L385.639 390.725C372.021 414.315 346.859 428.842 319.624 428.842H173.696C146.472 428.842 121.31 414.315 107.692 390.725L34.7341 264.351C21.1163 240.761 21.1163 211.707 34.7341 188.129L107.692 61.7435C121.31 38.1649 146.472 23.638 173.696 23.638H319.624C346.859 23.638 372.021 38.1649 385.639 61.7435L431.808 137.718"
                           stroke="url(#paint0_linear_52_377)" stroke-width="40" stroke-miterlimit="10"
                           stroke-linecap="round"/>
@@ -69,24 +73,25 @@ $base_class = 'wp-block-journeyo-plan-section';
                     </defs>
                 </svg>
 
-                <div class="<?php echo $base_class . '__items-wrap'; ?>">
+                <ol class="<?php echo $base_class . '__items-wrap'; ?>" role="list">
                     <?php foreach ($items as $index => $item) : ?>
-                        <article class="<?php echo $base_class . '__item'; ?>">
-
+                        <li class="<?php echo $base_class . '__item'; ?>" itemscope
+                            itemtype="https://schema.org/HowToStep">
+                            <meta itemprop="position" content="<?php echo esc_attr($index + 1); ?>">
                             <?php if (!empty($item['title'])) : ?>
-                                <h3 class="<?php echo $base_class . '__item-title'; ?>">
+                                <h3 class="<?php echo $base_class . '__item-title'; ?>" itemprop="name">
                                     <?php echo wp_kses_post($item['title']); ?>
                                 </h3>
                             <?php endif; ?>
 
                             <?php if (!empty($item['subtitle'])) : ?>
-                                <p class="<?php echo $base_class . '__item-subtitle'; ?>">
+                                <p class="<?php echo $base_class . '__item-subtitle'; ?>" itemprop="description">
                                     <?php echo wp_kses_post($item['subtitle']); ?>
                                 </p>
                             <?php endif; ?>
-                        </article>
+                        </li>
                     <?php endforeach; ?>
-                </div>
+                </ol>
             </div>
         <?php endif; ?>
     </div>

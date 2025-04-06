@@ -12,3 +12,10 @@ body,
 .wpml-ls-statics-footer {
   display: none!important;
 }
+
+.jn-visually-hidden {
+  position: absolute;
+  z-index: -100;
+  clip: rect(0 0 0 0);
+  opacity: 0;
+}

@@ -92,6 +92,11 @@ class Header {
 
 	displayMobMenu() {
 		document.body.classList.toggle('mob-menu-active');
+
+		this.mobBurgerBtn.setAttribute(
+			'aria-expanded',
+			document.body.classList.contains('mob-menu-active'),
+		);
 	}
 
 	displayLangsSwitcher() {

@@ -10,18 +10,22 @@ $wrapper_attributes = get_block_wrapper_attributes([
 $base_class = 'wp-block-journeyo-benefits-section';
 ?>
 
-<section <?php echo $wrapper_attributes; ?>>
+<section <?php echo $wrapper_attributes; ?> role="region"
+                                            aria-labelledby="<?php echo esc_attr($block_id . '-title'); ?>"
+                                            itemprop="description"
+>
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
         <?php if (!empty($title)) : ?>
-            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>">
+            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>"
+                id="<?php echo esc_attr($block_id . '-title'); ?>">
                 <?php echo wp_kses_post($title); ?>
             </h2>
         <?php endif; ?>
         <?php if (!empty($subtitle)) : ?>
-            <p class="<?php echo $base_class . '__subtitle jn-animate'; ?>">
+            <h3 class="<?php echo $base_class . '__subtitle jn-animate'; ?>">
                 <?php echo wp_kses_post($subtitle); ?>
-            </p>
+            </h3>
         <?php endif; ?>
 
         <?php if (!empty($items)) : ?>
@@ -42,18 +46,19 @@ $base_class = 'wp-block-journeyo-benefits-section';
             $items_classes = $base_class . '__items ' . $cols_class;
             ?>
 
-            <div class="<?php echo $items_classes; ?>">
+            <ul class="<?php echo $items_classes; ?>" role="list">
                 <?php foreach ($items as $index => $item) : ?>
-                    <article class="<?php echo $base_class . '__item jn-animate'; ?>">
+                    <li class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
+                             itemtype="https://schema.org/Feature">
                         <div class="<?php echo $base_class . '__item-content'; ?>">
                             <?php if (!empty($item['title'])) : ?>
-                                <h3 class="<?php echo $base_class . '__item-title'; ?>">
+                                <h4 class="<?php echo $base_class . '__item-title'; ?>" itemprop="name">
                                     <?php echo wp_kses_post($item['title']); ?>
-                                </h3>
+                                </h4>
                             <?php endif; ?>
 
                             <?php if (!empty($item['subtitle'])) : ?>
-                                <p class="<?php echo $base_class . '__item-subtitle'; ?>">
+                                <p class="<?php echo $base_class . '__item-subtitle'; ?>" itemprop="description">
                                     <?php echo wp_kses_post($item['subtitle']); ?>
                                 </p>
                             <?php endif; ?>
@@ -63,18 +68,22 @@ $base_class = 'wp-block-journeyo-benefits-section';
                             <div class="<?php echo $base_class . '__item-icon-white-border'; ?>"></div>
                             <div class="<?php echo $base_class . '__item-icon-helper-top'; ?>"></div>
                             <div class="<?php echo $base_class . '__item-icon-helper-right'; ?>"></div>
-                            <figure class="<?php echo $base_class . '__item-icon'; ?>">
+                            <figure class="<?php echo $base_class . '__item-icon'; ?>" itemscope
+                                    itemtype="https://schema.org/ImageObject"
+                            >
                                 <?php
                                 get_template_part('/template-parts/advanced-image', null, array(
                                     'img_id' => $item['icon']['id'],
-                                    'class' => ''
+                                    'class' => '',
+                                    'is_schema' => true,
+                                    'decorative' => false,
                                 ));
                                 ?>
                             </figure>
                         <?php endif; ?>
-                    </article>
+                    </li>
                 <?php endforeach; ?>
-            </div>
+            </ul>
         <?php endif; ?>
     </div>
 </section>

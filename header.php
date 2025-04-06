@@ -22,5 +22,7 @@ $journeyo_body_class = '';
 
 	<?php wp_head(); ?>
 </head>
-<body <?php body_class( $journeyo_body_class ); ?>>
+<body <?php body_class( $journeyo_body_class ); ?> itemscope itemtype="https://schema.org/WebSite">
 <?php wp_body_open(); ?>
+<meta itemprop="name" content="<?php echo esc_html(get_bloginfo('name')); ?>">
+<meta itemprop="url" content="<?php echo get_home_url(); ?>">

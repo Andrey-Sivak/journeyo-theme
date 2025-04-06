@@ -1,12 +1,14 @@
 <?php
 $img_id = $args['img_id'];
-$img_class = $args['class'];
+$img_class = $args['class'] ?? '';
+$is_schema = $args['is_schema'] ?? false;
+$decorative = $args['decorative'] ?? false;
 
 if ($img_id) :
     $image_url = wp_get_attachment_url($img_id);
     $file_ext = pathinfo($image_url, PATHINFO_EXTENSION);
-
     $image_alt = get_post_meta($img_id, '_wp_attachment_image_alt', true);
+    $image_caption = wp_get_attachment_caption($img_id);
 
     if (strtolower($file_ext) === 'svg') :
         $meta = wp_get_attachment_metadata($img_id);
@@ -15,9 +17,12 @@ if ($img_id) :
         ?>
         <img src="<?php echo esc_url($image_url); ?>"
              alt="<?php echo esc_attr($image_alt); ?>"
+             title="<?php echo esc_attr($image_alt); ?>"
              width="<?php echo esc_attr($width); ?>"
              height="<?php echo esc_attr($height); ?>"
              loading="lazy"
+            <?php echo $is_schema ? 'itemprop="contentUrl"' : ''; ?>
+            <?php echo $decorative ? 'aria-hidden="true"' : ''; ?>
              class="<?php echo esc_attr($img_class); ?>">
     <?php
     else :
@@ -33,7 +38,11 @@ if ($img_id) :
                 $original_srcset[] = $original_image[0] . ' ' . $original_image[1] . 'w';
 
                 $webp_url = preg_replace('/\.(jpe?g|png)$/i', '.webp', $original_image[0]);
-                $webp_srcset[] = $webp_url . ' ' . $original_image[1] . 'w';
+                if (file_exists(str_replace(home_url(), ABSPATH, $webp_url))) {
+                    $webp_srcset[] = $webp_url . ' ' . $original_image[1] . 'w';
+                } else {
+                    $webp_srcset[] = $original_image[0] . ' ' . $original_image[1] . 'w';
+                }
 
                 $sizes[] = '(max-width: ' . $original_image[1] . 'px) 100vw';
             }
@@ -60,10 +69,21 @@ if ($img_id) :
                  srcset="<?php echo esc_attr($webp_srcset_attr); ?>"
                  sizes="<?php echo esc_attr($sizes_attr); ?>"
                  alt="<?php echo esc_attr($image_alt); ?>"
+                 title="<?php echo esc_attr($image_alt); ?>"
                  width="<?php echo esc_attr($width); ?>"
                  height="<?php echo esc_attr($height); ?>"
                  loading="lazy"
+                <?php echo $is_schema ? 'itemprop="contentUrl"' : ''; ?>
+                <?php echo $decorative ? 'aria-hidden="true"' : ''; ?>
                  class="<?php echo esc_attr($img_class); ?>">
         </picture>
+    <?php endif;
+    if ($is_schema) : ?>
+        <meta itemprop="name" content="<?php echo esc_attr($image_alt); ?>">
+        <meta itemprop="width" content="<?php echo esc_attr($width); ?>">
+        <meta itemprop="height" content="<?php echo esc_attr($height); ?>">
+        <?php if ($image_caption && !$decorative) : ?>
+            <meta itemprop="caption" content="<?php echo esc_attr($image_caption); ?>">
+        <?php endif; ?>
     <?php endif; ?>
 <?php endif; ?>

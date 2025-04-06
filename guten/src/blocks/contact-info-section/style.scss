@@ -72,6 +72,10 @@
       }
     }
 
+    & > * {
+      display: inline;
+    }
+
     &-label {
       margin: 0;
       display: inline;
