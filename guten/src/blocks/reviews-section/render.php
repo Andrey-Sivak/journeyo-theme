@@ -41,16 +41,15 @@ $base_class = 'wp-block-journeyo-reviews-section';
                         ?>
                         <article class="<?php echo $articleClass; ?>">
                             <div class="<?php echo $base_class . '__item-wrap'; ?>">
-                                <?php if (!empty($item['photo']) && is_array($item['photo']) && !empty($item['photo']['url'])) : ?>
+                                <?php if (!empty($item['photo']) && is_array($item['photo']) && !empty($item['photo']['id'])) : ?>
                                     <div class="<?php echo $base_class . '__item-photo-helper'; ?>"></div>
                                     <figure class="<?php echo $base_class . '__item-photo'; ?>">
-                                        <img
-                                                src="<?php echo esc_url($item['photo']['url']); ?>"
-                                                alt="<?php echo esc_attr($item['photo']['alt'] ?? ''); ?>"
-                                                loading="lazy"
-                                                width="111"
-                                                height="111"
-                                        >
+                                        <?php
+                                        get_template_part('/template-parts/advanced-image', null, array(
+                                            'img_id' => $item['photo']['id'],
+                                            'class' => ''
+                                        ));
+                                        ?>
                                     </figure>
                                 <?php endif; ?>
                                 <div class="<?php echo $base_class . '__item-quote-helper'; ?>"></div>

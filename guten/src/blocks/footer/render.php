@@ -15,7 +15,7 @@ $base_class = 'wp-block-journeyo-footer';
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
         <div class="<?php echo $base_class . '__top'; ?>">
-            <?php if ($logo['url']) : ?>
+            <?php if ($logo['id']) : ?>
                 <div
                         class="<?php echo $base_class . '__logo'; ?>"
                         itemscope
@@ -26,14 +26,12 @@ $base_class = 'wp-block-journeyo-footer';
                     <figure>
                         <a href="<?php echo get_home_url(); ?>"
                            aria-label="<?php echo esc_attr__('Go to homepage', 'jn') ?>" itemprop="url">
-                            <img
-                                    src="<?php echo esc_url($logo['url']); ?>"
-                                    alt="<?php echo esc_attr__('Journeyo Logo', 'jn') ?>"
-                                    width="200"
-                                    height="50"
-                                    loading="eager"
-                                    itemprop="logo"
-                            />
+                            <?php
+                            get_template_part('/template-parts/advanced-image', null, array(
+                                'img_id' => $logo['id'],
+                                'class' => ''
+                            ));
+                            ?>
                         </a>
                         <figcaption itemprop="description" style="display:none;">
                             <?php echo esc_html(get_bloginfo('description')); ?>
@@ -63,13 +61,12 @@ $base_class = 'wp-block-journeyo-footer';
                                 <a href="<?php echo esc_url($social_item['url']); ?>"
                                    target="<?php echo esc_attr($social_item['target']); ?>"
                                    class="<?php echo $base_class . '__social-item'; ?>">
-                                    <img
-                                            src="<?php echo esc_url($social_item['icon']['url']); ?>"
-                                            alt="<?php echo esc_attr($social_item['icon']['alt']) ?>"
-                                            width="50"
-                                            height="50"
-                                            loading="eager"
-                                    />
+                                    <?php
+                                    get_template_part('/template-parts/advanced-image', null, array(
+                                        'img_id' => $social_item['icon']['id'],
+                                        'class' => ''
+                                    ));
+                                    ?>
                                 </a>
                             <?php endforeach; ?>
                         </div>

@@ -17,26 +17,24 @@ $base_class = 'wp-block-journeyo-promo-banner-section';
         </div>
         <div class="<?php echo $base_class . '__wrap'; ?>">
 
-            <?php if ($image1['url']) : ?>
+            <?php if ($image1['id']) : ?>
                 <figure class="<?php echo $base_class . '__image-1'; ?>">
-                    <img
-                            src="<?php echo esc_url($image1['url']); ?>"
-                            alt="<?php echo esc_url($image1['alt']); ?>"
-                            width="<?php echo esc_url($image1['w']); ?>"
-                            height="<?php echo esc_url($image1['h']); ?>"
-                            loading="lazy"
-                    >
+                    <?php
+                    get_template_part('/template-parts/advanced-image', null, array(
+                        'img_id' => $image1['id'],
+                        'class' => ''
+                    ));
+                    ?>
                 </figure>
             <?php endif; ?>
-            <?php if ($image2['url']) : ?>
+            <?php if ($image2['id']) : ?>
                 <figure class="<?php echo $base_class . '__image-2'; ?>">
-                    <img
-                            src="<?php echo esc_url($image2['url']); ?>"
-                            alt="<?php echo esc_url($image2['alt']); ?>"
-                            width="<?php echo esc_url($image2['w']); ?>"
-                            height="<?php echo esc_url($image2['h']); ?>"
-                            loading="lazy"
-                    >
+                    <?php
+                    get_template_part('/template-parts/advanced-image', null, array(
+                        'img_id' => $image2['id'],
+                        'class' => ''
+                    ));
+                    ?>
                 </figure>
             <?php endif; ?>
 

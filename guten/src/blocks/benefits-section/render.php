@@ -59,18 +59,17 @@ $base_class = 'wp-block-journeyo-benefits-section';
                             <?php endif; ?>
                         </div>
 
-                        <?php if (!empty($item['icon']) && is_array($item['icon']) && !empty($item['icon']['url'])) : ?>
+                        <?php if (!empty($item['icon']) && is_array($item['icon']) && !empty($item['icon']['id'])) : ?>
                             <div class="<?php echo $base_class . '__item-icon-white-border'; ?>"></div>
                             <div class="<?php echo $base_class . '__item-icon-helper-top'; ?>"></div>
                             <div class="<?php echo $base_class . '__item-icon-helper-right'; ?>"></div>
                             <figure class="<?php echo $base_class . '__item-icon'; ?>">
-                                <img
-                                        src="<?php echo esc_url($item['icon']['url']); ?>"
-                                        alt="<?php echo esc_attr($item['icon']['alt'] ?? ''); ?>"
-                                        loading="eager"
-                                        width="<?php echo esc_attr($item['icon']['w'] ?? 0); ?>"
-                                        height="<?php echo esc_attr($item['icon']['h'] ?? 0); ?>"
-                                >
+                                <?php
+                                get_template_part('/template-parts/advanced-image', null, array(
+                                    'img_id' => $item['icon']['id'],
+                                    'class' => ''
+                                ));
+                                ?>
                             </figure>
                         <?php endif; ?>
                     </article>

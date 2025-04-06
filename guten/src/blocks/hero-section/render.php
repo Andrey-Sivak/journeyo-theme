@@ -13,7 +13,7 @@ $base_class = 'wp-block-journeyo-hero-section';
 
 <header class="<?php echo $base_class . '__header'; ?>">
     <div class="<?php echo $base_class . '__header-wrap'; ?>">
-        <?php if ($logo['url']) : ?>
+        <?php if ($logo['id']) : ?>
             <div
                     class="<?php echo $base_class . '__header-logo'; ?>"
                     itemscope
@@ -24,14 +24,12 @@ $base_class = 'wp-block-journeyo-hero-section';
                 <figure>
                     <a href="<?php echo get_home_url(); ?>"
                        aria-label="<?php echo esc_attr__('Go to homepage', 'jn') ?>" itemprop="url">
-                        <img
-                                src="<?php echo esc_url($logo['url']); ?>"
-                                alt="<?php echo esc_attr__('Journeyo Logo', 'jn') ?>"
-                                width="200"
-                                height="50"
-                                loading="eager"
-                                itemprop="logo"
-                        />
+                        <?php
+                        get_template_part('/template-parts/advanced-image', null, array(
+                            'img_id' => $logo['id'],
+                            'class' => ''
+                        ));
+                        ?>
                     </a>
                     <figcaption itemprop="description" style="display:none;">
                         <?php echo esc_html(get_bloginfo('description')); ?>
@@ -276,15 +274,14 @@ $base_class = 'wp-block-journeyo-hero-section';
                         </div>
                     </div>
 
-                    <?php if ($image['url']) : ?>
+                    <?php if ($image['id']) : ?>
                         <figure class="<?php echo $base_class . '__content-image'; ?>">
-                            <img
-                                    src="<?php echo esc_url($image['url']); ?>"
-                                    alt="<?php echo esc_url($image['alt']); ?>"
-                                    width="901"
-                                    height="750"
-                                    loading="eager"
-                            >
+                            <?php
+                            get_template_part('/template-parts/advanced-image', null, array(
+                                'img_id' => $image['id'],
+                                'class' => ''
+                            ));
+                            ?>
                         </figure>
                     <?php endif; ?>
                 </div>
