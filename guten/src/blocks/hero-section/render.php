@@ -98,18 +98,20 @@ $base_class = 'wp-block-journeyo-hero-section';
                             foreach ($languages as $lang) :
                                 if (!$lang['active']) :
                                     if (!empty($lang['country_flag_url'])) : ?>
-                                        <a href="<?php echo esc_url($lang['url']); ?>"
-                                           title="<?php echo esc_attr($lang['translated_name']); ?>"
-                                           lang="<?php echo esc_attr($lang['language_code']); ?>"
-                                        >
-                                            <span><?php echo esc_html(strtoupper($lang['language_code'])); ?></span>
-                                            <img src="<?php echo esc_url($lang['country_flag_url']); ?>"
-                                                 alt="<?php echo esc_attr($lang['translated_name']); ?>"
-                                                 loading="lazy"
-                                                 width="18"
-                                                 height="12"
-                                                 class="wpml-flag">
-                                        </a>
+                                        <li>
+                                            <a href="<?php echo esc_url($lang['url']); ?>"
+                                               title="<?php echo esc_attr($lang['translated_name']); ?>"
+                                               lang="<?php echo esc_attr($lang['language_code']); ?>"
+                                            >
+                                                <span><?php echo esc_html(strtoupper($lang['language_code'])); ?></span>
+                                                <img src="<?php echo esc_url($lang['country_flag_url']); ?>"
+                                                     alt="<?php echo esc_attr($lang['translated_name']); ?>"
+                                                     loading="lazy"
+                                                     width="18"
+                                                     height="12"
+                                                     class="wpml-flag">
+                                            </a>
+                                        </li>
                                     <?php
                                     endif;
                                 endif;
