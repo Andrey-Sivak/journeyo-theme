@@ -81,6 +81,10 @@ class Header {
 
 		if (this.isHeaderHide(scrolled)) {
 			this.headerEl.classList.add('jn-out');
+
+			if (this.langs.classList.contains('active')) {
+				this.langs.classList.remove('active');
+			}
 		} else {
 			this.headerEl.classList.remove('jn-out');
 		}
