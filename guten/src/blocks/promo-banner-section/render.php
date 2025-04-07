@@ -293,7 +293,7 @@ $base_class = 'wp-block-journeyo-promo-banner-section';
 
             <div class="<?php echo $base_class . '__content'; ?>">
                 <?php if (!empty($title)) : ?>
-                    <h2 class="<?php echo $base_class . '__title'; ?>"
+                    <h2 class="<?php echo $base_class . '__title jn-animate'; ?>"
                         id="<?php echo esc_attr($block_id . '-title'); ?>"
                     >
                         <?php echo wp_kses_post($title); ?>
@@ -301,7 +301,8 @@ $base_class = 'wp-block-journeyo-promo-banner-section';
                 <?php endif; ?>
 
                 <div class="<?php echo $base_class . '__buttons'; ?>">
-                    <a href="<?php echo esc_url($appstore_link); ?>" target="_blank" rel="noopener" itemprop="url">
+                    <a href="<?php echo esc_url($appstore_link); ?>" target="_blank" rel="noopener" itemprop="url"
+                       class="jn-animate">
                         <svg width="219" aria-hidden="true" height="58" viewBox="0 0 219 58" fill="none">
                             <rect width="219" height="58" rx="29" fill="#141416"/>
                             <path
@@ -396,7 +397,8 @@ $base_class = 'wp-block-journeyo-promo-banner-section';
                         </svg>
                         <span class="screen-reader-text"><?php echo esc_html__('Download Journey from the App Store', 'jn'); ?></span>
                     </a>
-                    <a href="<?php echo esc_url($google_play_link); ?>" target="_blank" rel="noopener" itemprop="url">
+                    <a href="<?php echo esc_url($google_play_link); ?>" target="_blank" rel="noopener" itemprop="url"
+                       class="jn-animate">
                         <svg width="219" aria-hidden="true" height="58" viewBox="0 0 219 58" fill="none">
                             <rect width="219" height="58" rx="29" fill="#141416"/>
                             <path

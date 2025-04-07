@@ -362,7 +362,7 @@ $loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width=
             </h2>
         <?php endif; ?>
         <?php if (!empty($form_shortcode)) : ?>
-            <div class="<?php echo $base_class . '__form'; ?>" role="form">
+            <div class="<?php echo $base_class . '__form jn-animate'; ?>" role="form">
                 <svg width="652" height="81" viewBox="0 0 652 81" fill="none" aria-hidden="true">
                     <rect x="0.75" y="0.75" width="650.5" height="79.5" rx="39.75" fill="white" stroke="#141416"
                           stroke-width="1.5" stroke-dasharray="20 20"/>
@@ -372,5 +372,3 @@ $loading_svg = '<svg viewBox="0 0 100 100" preserveAspectRatio="xMidYMid" width=
         <?php endif; ?>
     </div>
 </section>
-
-<!--[_site_admin_email]-->

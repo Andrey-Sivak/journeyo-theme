@@ -178,6 +178,7 @@ $base_class = 'wp-block-journeyo-hero-section';
                             <meta itemprop="name" content="<?php echo esc_html(get_bloginfo('name')); ?>">
                             <meta itemprop="operatingSystem" content="iOS">
                             <a href="<?php echo esc_url($appstore_link); ?>" target="_blank" rel="noopener noreferrer"
+                               class="jn-apple-btn"
                                aria-label="<?php echo esc_attr__('Download on the App Store', 'jn'); ?>"
                                itemprop="downloadUrl"
                             >
@@ -275,7 +276,7 @@ $base_class = 'wp-block-journeyo-hero-section';
                                 </svg>
                             </a>
                             <meta itemprop="operatingSystem" content="Android">
-                            <a href="<?php echo esc_url($google_play_link); ?>" target="_blank"
+                            <a href="<?php echo esc_url($google_play_link); ?>" class="jn-google-btn" target="_blank"
                                rel="noopener noreferrer"
                                aria-label="<?php echo esc_attr__('Get it on Google Play', 'jn'); ?>"
                                itemprop="downloadUrl"

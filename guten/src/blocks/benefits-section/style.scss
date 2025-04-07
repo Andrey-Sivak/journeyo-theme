@@ -194,6 +194,25 @@
       border-radius: 3.378vw;
       margin-top: 1.621vw;
       padding: 9.46vw 2.02vw 2.7vw;
+
+      &:nth-child(2n) {
+        transition-delay: .2s;
+      }
+    }
+
+    @media(min-width: 1024px) {
+
+      &:nth-child(2n) {
+        transition-delay: initial;
+      }
+
+      &:nth-child(3n + 2) {
+        transition-delay: .2s;
+      }
+
+      &:nth-child(3n) {
+        transition-delay: .4s;
+      }
     }
 
     @media(min-width: 1480px) {

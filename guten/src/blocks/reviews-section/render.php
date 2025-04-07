@@ -59,7 +59,7 @@ $base_class = 'wp-block-journeyo-reviews-section';
                             $articleClass .= ' swiper-slide';
                         }
                         ?>
-                        <li class="<?php echo $articleClass; ?>" itemscope itemtype="https://schema.org/Review">
+                        <li class="<?php echo $articleClass; ?> jn-animate" itemscope itemtype="https://schema.org/Review">
                             <div class="<?php echo $base_class . '__item-wrap'; ?>">
                                 <?php if (!empty($item['photo']) && is_array($item['photo']) && !empty($item['photo']['id'])) : ?>
                                     <div class="<?php echo $base_class . '__item-photo-helper'; ?>"></div>

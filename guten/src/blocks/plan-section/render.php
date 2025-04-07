@@ -81,7 +81,7 @@ $base_class = 'wp-block-journeyo-plan-section';
 
                 <ol class="<?php echo $base_class . '__items-wrap'; ?>" role="list">
                     <?php foreach ($items as $index => $item) : ?>
-                        <li class="<?php echo $base_class . '__item'; ?>" itemscope
+                        <li class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
                             itemtype="https://schema.org/HowToStep">
                             <meta itemprop="position" content="<?php echo esc_attr($index + 1); ?>">
                             <?php if (!empty($item['title'])) : ?>

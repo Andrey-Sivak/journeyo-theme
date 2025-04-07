@@ -24,6 +24,10 @@
 		);
 	}
 
+	import('./Animations.js').then(
+		({ default: Animations }) => new Animations(),
+	);
+
 	if (elements.footer) {
 		import('./Footer.js').then(({ default: Footer }) => new Footer());
 	}

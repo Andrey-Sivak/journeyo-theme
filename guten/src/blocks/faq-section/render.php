@@ -22,9 +22,9 @@ $base_class = 'wp-block-journeyo-faq-section';
         <?php endif; ?>
 
         <?php if (!empty($items)) : ?>
-            <dl class="<?php echo $base_class . '__items'; ?>">
+            <ul class="<?php echo $base_class . '__items'; ?>" role="list">
                 <?php foreach ($items as $index => $item) : ?>
-                    <dt class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
+                    <li class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope
                         itemtype="https://schema.org/Question" itemprop="mainEntity"
                     >
                         <?php if (!empty($item['question'])) : ?>
@@ -48,7 +48,7 @@ $base_class = 'wp-block-journeyo-faq-section';
                         <?php endif; ?>
 
                         <?php if (!empty($item['answer'])) : ?>
-                            <dd
+                            <div
                                     class="<?php echo $base_class . '__item-answer'; ?>"
                                     id="faq-answer-<?php echo esc_attr($index); ?>"
                                     itemtype="https://schema.org/Answer"
@@ -57,11 +57,11 @@ $base_class = 'wp-block-journeyo-faq-section';
                                 <p class="<?php echo $base_class . '__item-answer-inner'; ?>" itemprop="text">
                                     <?php echo wp_kses_post($item['answer']); ?>
                                 </p>
-                            </dd>
+                            </div>
                         <?php endif; ?>
-                    </dt>
+                    </li>
                 <?php endforeach; ?>
-            </dl>
+            </ul>
         <?php endif; ?>
     </div>
 </section>

@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 	// const totalDuration = 2000;
 	// const step = totalDuration / allPaths.length;
-
+	//
 	// allPaths.forEach((item, index) => {
 	// 	setTimeout(() => {
 	// 		item.style.opacity = 1;

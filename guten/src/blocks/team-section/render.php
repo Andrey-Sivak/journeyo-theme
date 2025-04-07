@@ -24,7 +24,7 @@ $base_class = 'wp-block-journeyo-team-section';
             <ul class="<?php echo $base_class . '__items' . (count($items) > 3 ? '' : ' jn-items-' . count($items)); ?>"
                 role="list">
                 <?php foreach ($items as $index => $item) : ?>
-                    <li class="<?php echo $base_class . '__item'; ?>" itemscope itemtype="https://schema.org/Person">
+                    <li class="<?php echo $base_class . '__item jn-animate'; ?>" itemscope itemtype="https://schema.org/Person">
                         <div class="<?php echo $base_class . '__item-wrap'; ?>">
                             <?php if (!empty($item['photo']) && is_array($item['photo']) && !empty($item['photo']['id'])) : ?>
                                 <figure class="<?php echo $base_class . '__item-photo'; ?>" itemprop="image">
