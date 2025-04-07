@@ -59,6 +59,10 @@
           }
         }
       }
+    },
+    "blockId": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {

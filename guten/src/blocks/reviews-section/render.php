@@ -1,19 +1,25 @@
 <?php
 $title = $attributes['title'] ?? '';
 $items = $attributes['items'] ?? [];
+$block_id = $attributes['blockId'] ?? '';
 
-$wrapper_attributes = get_block_wrapper_attributes();
+$wrapper_attributes = get_block_wrapper_attributes([
+    'id' => !empty($block_id) ? esc_attr($block_id) : null,
+]);
 $base_class = 'wp-block-journeyo-reviews-section';
 ?>
 
-<section <?php echo $wrapper_attributes; ?> role="region"
-                                            aria-labelledby="reviews-section-title"
-                                            itemprop="review"
+<section <?php echo $wrapper_attributes; ?>
+        role="region"
+        aria-labelledby="<?php echo esc_attr($block_id . '-title'); ?>"
+        itemprop="review"
 >
     <div class="<?php echo $base_class . '__wrap'; ?>">
 
         <?php if (!empty($title)) : ?>
-            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>" id="reviews-section-title">
+            <h2 class="<?php echo $base_class . '__title jn-animate'; ?>"
+                id="<?php echo esc_attr($block_id . '-title'); ?>"
+            >
                 <?php echo wp_kses_post($title); ?>
             </h2>
         <?php endif; ?>
