@@ -344,9 +344,12 @@
           align-items: center;
           column-gap: 6px;
           font-weight: bold;
+        }
+
+        li {
+          border-radius: 6px;
           background-color: #fff;
           border: 1px solid var(--jn-gray-dark);
-          border-radius: 6px;
 
           @media (min-width: 768px) {
             border-radius: 0;
