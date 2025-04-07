@@ -4,12 +4,12 @@ class Header {
 	headerEl = document.querySelector(
 		'header.wp-block-journeyo-hero-section__header',
 	);
-	// scrollPrev = 0;
+	scrollPrev = 0;
 
 	constructor() {
 		if (!this.headerEl) return;
 
-		// this.boundScrollHandler = this.scrollHandler.bind(this);
+		this.boundScrollHandler = this.scrollHandler.bind(this);
 		// this.menuLinks = this.headerEl.querySelectorAll('.rl-header-menu a');
 		this.boundDisplayMobMenuHandler = this.displayMobMenu.bind(this);
 		this.mobBurgerBtn = document.querySelector('.mob-burger-btn');
@@ -27,8 +27,8 @@ class Header {
 	}
 
 	init() {
-		// this.boundScrollHandler();
-		// window.addEventListener('scroll', this.boundScrollHandler);
+		this.boundScrollHandler();
+		window.addEventListener('scroll', this.boundScrollHandler);
 
 		if (this.mobBurgerBtn) {
 			this.mobBurgerBtn.addEventListener(
@@ -64,31 +64,33 @@ class Header {
 		// });
 	}
 
-	// isHeaderHide(scrolled) {
-	// 	return scrolled > 100 && scrolled > this.scrollPrev;
-	// }
+	isHeaderHide(scrolled) {
+		return (
+			scrolled > window.innerHeight / 1.5 && scrolled > this.scrollPrev
+		);
+	}
 
-	// isHeaderScrolled(scrolled) {
-	// 	return scrolled > 100;
-	// }
+	isHeaderScrolled(scrolled) {
+		return scrolled > window.innerHeight / 1.5;
+	}
 
-	// scrollHandler() {
-	// 	const scrolled = window.scrollY;
-	//
-	// 	if (this.isHeaderHide(scrolled)) {
-	// 		this.headerEl.classList.add('out');
-	// 	} else {
-	// 		this.headerEl.classList.remove('out');
-	// 	}
-	//
-	// 	if (this.isHeaderScrolled(scrolled)) {
-	// 		this.headerEl.classList.add('scrolled');
-	// 	} else {
-	// 		this.headerEl.classList.remove('scrolled');
-	// 	}
-	//
-	// 	this.scrollPrev = scrolled;
-	// }
+	scrollHandler() {
+		const scrolled = window.scrollY;
+
+		if (this.isHeaderHide(scrolled)) {
+			this.headerEl.classList.add('jn-out');
+		} else {
+			this.headerEl.classList.remove('jn-out');
+		}
+
+		if (this.isHeaderScrolled(scrolled)) {
+			this.headerEl.classList.add('jn-scrolled');
+		} else {
+			this.headerEl.classList.remove('jn-scrolled');
+		}
+
+		this.scrollPrev = scrolled;
+	}
 
 	displayMobMenu() {
 		document.body.classList.toggle('mob-menu-active');

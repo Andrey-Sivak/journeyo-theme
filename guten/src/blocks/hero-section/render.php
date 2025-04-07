@@ -4,6 +4,7 @@ $description = $attributes['text'] ?? '';
 $appstore_link = $attributes['appStoreLink'] ?? '';
 $google_play_link = $attributes['googlePlayLink'] ?? '';
 $logo = $attributes['logo'] ?? null;
+$logo2 = $attributes['logo2'] ?? null;
 $image = $attributes['image'] ?? null;
 $button_text = $attributes['buttonText'] ?? '';
 
@@ -22,7 +23,15 @@ $base_class = 'wp-block-journeyo-hero-section';
                         <?php
                         get_template_part('/template-parts/advanced-image', null, array(
                             'img_id' => $logo['id'],
-                            'class' => '',
+                            'class' => 'jn-base-header-logo',
+                            'is_schema' => true,
+                            'decorative' => false,
+                        ));
+                        ?>
+                        <?php
+                        get_template_part('/template-parts/advanced-image', null, array(
+                            'img_id' => $logo2['id'],
+                            'class' => 'jn-color-header-logo',
                             'is_schema' => true,
                             'decorative' => false,
                         ));

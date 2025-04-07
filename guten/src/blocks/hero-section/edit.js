@@ -18,6 +18,7 @@ const Edit = (props) => {
 		buttonText,
 		image,
 		logo,
+		logo2,
 		appStoreLink,
 		googlePlayLink,
 	} = attributes;
@@ -50,6 +51,16 @@ const Edit = (props) => {
 		});
 	};
 
+	const onSelectLogo2 = (media) => {
+		setAttributes({
+			logo2: {
+				id: media.id,
+				url: media.url,
+				alt: media.alt || '',
+			},
+		});
+	};
+
 	return (
 		<Fragment>
 			<InspectorPanel
@@ -64,9 +75,14 @@ const Edit = (props) => {
 						<div className={`${baseClass}__header`}>
 							<div className={`${baseClass}__header-logo`}>
 								<ImageUploader
-									buttonText={`Select Logo`}
+									buttonText={`Base Logo`}
 									image={logo.url}
 									onSelect={onSelectLogo}
+								/>
+								<ImageUploader
+									buttonText={`Color Logo for white Header`}
+									image={logo2.url}
+									onSelect={onSelectLogo2}
 								/>
 							</div>
 							<div

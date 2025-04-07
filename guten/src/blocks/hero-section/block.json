@@ -42,6 +42,14 @@
         "url": "",
         "alt": ""
       }
+    },
+    "logo2": {
+      "type": "object",
+      "default": {
+        "id": null,
+        "url": "",
+        "alt": ""
+      }
     }
   },
   "supports": {

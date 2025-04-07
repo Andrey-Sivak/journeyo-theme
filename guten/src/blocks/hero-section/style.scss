@@ -73,6 +73,7 @@
   }
 
   &__header {
+    transition: all ease-in-out .3s;
     padding: 8px 16px;
     position: absolute;
     left: 50%;
@@ -87,6 +88,40 @@
 
     @media(min-width: 1200px) {
       top: 46px;
+    }
+
+    .jn-color-header-logo {
+      display: none;
+    }
+
+    .jn-base-header-logo {
+      display: block;
+    }
+
+    &.jn-scrolled {
+      position: fixed;
+      background-color: #fff;
+      border-bottom: 1px solid var(--jn-gray-dark);
+      top: 0;
+      padding: 16px 18px;
+      animation: headerFix 1s forwards;
+      box-shadow: 0 0 15px 0 rgba(0, 0, 0, .25);
+
+      @media(min-width: 1024px) {
+        padding: 20px 34px;
+      }
+
+      .jn-color-header-logo {
+        display: block;
+      }
+
+      .jn-base-header-logo {
+        display: none;
+      }
+    }
+
+    &.jn-out {
+      transform: translateY(-130%) translateX(-50%);
     }
 
     &-wrap {
@@ -570,5 +605,30 @@ body.mob-menu-active {
       top: 50%;
       transform: translate(-50%, -50%) rotate(45deg);
     }
+  }
+}
+
+.admin-bar {
+  .wp-block-journeyo-hero-section__header {
+
+    @media(min-width: 1024px) {
+      &.jn-scrolled {
+        top: 32px;
+      }
+    }
+  }
+}
+
+@keyframes headerFix {
+  0% {
+    opacity: 0;
+  }
+
+  99% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
   }
 }
