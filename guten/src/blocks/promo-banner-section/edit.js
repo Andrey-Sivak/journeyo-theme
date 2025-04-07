@@ -12,8 +12,14 @@ import WarnButtonFillNeed from '../../common-components/WarnButtonFillNeed.js';
 
 const Edit = (props) => {
 	const { attributes, setAttributes } = props;
-	const { title, phoneImage1, phoneImage2, appStoreLink, googlePlayLink } =
-		attributes;
+	const {
+		title,
+		phoneImage1,
+		phoneImage2,
+		appStoreLink,
+		googlePlayLink,
+		blockId,
+	} = attributes;
 
 	const baseClass = 'wp-block-journeyo-promo-banner-section';
 
@@ -51,6 +57,7 @@ const Edit = (props) => {
 				setAttributes={setAttributes}
 				appStoreLink={appStoreLink}
 				googlePlayLink={googlePlayLink}
+				blockId={blockId}
 			/>
 			<div {...blockProps}>
 				<div className={`${baseClass}__wrap-out`}>

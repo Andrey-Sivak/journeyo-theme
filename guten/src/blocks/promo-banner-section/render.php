@@ -4,15 +4,20 @@ $appstore_link = $attributes['appStoreLink'] ?? '';
 $google_play_link = $attributes['googlePlayLink'] ?? '';
 $image1 = $attributes['phoneImage1'] ?? null;
 $image2 = $attributes['phoneImage2'] ?? null;
+$block_id = $attributes['blockId'] ?? '';
 
-$wrapper_attributes = get_block_wrapper_attributes();
+$wrapper_attributes = get_block_wrapper_attributes([
+    'id' => !empty($block_id) ? esc_attr($block_id) : null,
+]);
 $base_class = 'wp-block-journeyo-promo-banner-section';
 ?>
-<section <?php echo $wrapper_attributes; ?> role="region"
-                                            aria-labelledby="promo-banner-title"
-                                            itemprop="offers"
-                                            itemscope
-                                            itemtype="https://schema.org/Offer">
+<section <?php echo $wrapper_attributes; ?>
+        role="region"
+        aria-labelledby="<?php echo esc_attr($block_id . '-title'); ?>"
+        itemprop="offers"
+        itemscope
+        itemtype="https://schema.org/Offer"
+>
     <meta itemprop="availability" content="https://schema.org/InStock">
     <meta itemprop="price" content="0">
     <meta itemprop="priceCurrency" content="USD">
@@ -288,7 +293,9 @@ $base_class = 'wp-block-journeyo-promo-banner-section';
 
             <div class="<?php echo $base_class . '__content'; ?>">
                 <?php if (!empty($title)) : ?>
-                    <h2 class="<?php echo $base_class . '__title'; ?>" id="promo-banner-title">
+                    <h2 class="<?php echo $base_class . '__title'; ?>"
+                        id="<?php echo esc_attr($block_id . '-title'); ?>"
+                    >
                         <?php echo wp_kses_post($title); ?>
                     </h2>
                 <?php endif; ?>

@@ -38,6 +38,10 @@
         "h": 0,
         "alt": ""
       }
+    },
+    "blockId": {
+      "type": "string",
+      "default": ""
     }
   },
   "supports": {
