@@ -57,7 +57,7 @@ $base_class = 'wp-block-journeyo-hero-section';
         </button>
 
         <?php if (!empty($menu_items)) : ?>
-            <nav>
+            <nav class="<?php echo $base_class . '__menu-items-wrap'; ?>">
                 <ul class="<?php echo $base_class . '__menu-items'; ?>">
                     <?php foreach ($menu_items as $index => $item) : ?>
                     <li class="<?php echo $base_class . '__menu-item'; ?>">
