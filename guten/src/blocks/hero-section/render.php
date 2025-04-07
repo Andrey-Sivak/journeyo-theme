@@ -7,6 +7,7 @@ $logo = $attributes['logo'] ?? null;
 $logo2 = $attributes['logo2'] ?? null;
 $image = $attributes['image'] ?? null;
 $button_text = $attributes['buttonText'] ?? '';
+$menu_items = $attributes['menuItems'] ?? [];
 
 $wrapper_attributes = get_block_wrapper_attributes();
 $base_class = 'wp-block-journeyo-hero-section';
@@ -54,6 +55,23 @@ $base_class = 'wp-block-journeyo-hero-section';
             <span class="mob-burger-btn-center"></span>
             <span class="mob-burger-btn-bottom"></span>
         </button>
+
+        <?php if (!empty($menu_items)) : ?>
+            <nav>
+                <ul class="<?php echo $base_class . '__menu-items'; ?>">
+                    <?php foreach ($menu_items as $index => $item) : ?>
+                    <li class="<?php echo $base_class . '__menu-item'; ?>">
+                        <a href="<?php echo esc_url($item['url']); ?>"
+                           target="<?php echo esc_attr($item['target']); ?>"
+                           class="jn-animated-link jn-black"
+                        >
+                            <?php echo esc_html($item['text']); ?>
+                        </a>
+                    </li>
+                    <?php endforeach; ?>
+                </ul>
+            </nav>
+        <?php endif; ?>
 
         <div class="<?php echo $base_class . '__header-right'; ?>">
             <?php if ($button_text) : ?>

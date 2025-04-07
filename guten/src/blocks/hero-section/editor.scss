@@ -2,9 +2,9 @@
   max-width: unset !important;
 
   &__header {
-    position: static!important;
-    transform: unset!important;
-    padding: 0!important;
+    position: static !important;
+    transform: unset !important;
+    padding: 0 !important;
     max-width: var(--container-w);
     margin: 0 auto 7.32cqw;
     display: flex;
@@ -14,6 +14,16 @@
 
     @supports not (font-size: 1cqw) {
       margin: 0 auto 105px;
+    }
+
+    &-logo {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+
+      button {
+        padding: 0 !important;
+      }
     }
 
     &-button {
@@ -49,9 +59,53 @@
     }
   }
 
+  &__menu-items {
+    display: flex;
+    align-items: center;
+
+    .wp-block-journeyo-hero-section__menu-item {
+      margin: 0 !important;
+    }
+
+    & > * {
+      margin: 0 24px;
+      position: relative;
+
+      &:after {
+        position: absolute;
+        content: '';
+        width: 1px;
+        background-color: var(--jn-black);
+        height: 100%;
+        top: 0;
+        left: auto;
+        right: -24px;
+      }
+
+      &:last-child {
+        margin: 0;
+
+        &:after {
+          content: none;
+        }
+      }
+
+      &:nth-last-child(2) {
+
+        &:after {
+          content: none;
+        }
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
   &__wrap-out {
     margin: 0;
-    padding: 30px 20px 215px!important;
+    padding: 30px 20px 215px !important;
   }
 
   &__content {
@@ -63,7 +117,7 @@
     }
 
     &-image {
-      animation: unset!important;
+      animation: unset !important;
       max-width: 62.83% !important;
 
       &.empty {
@@ -76,9 +130,9 @@
   }
 
   &__title {
-    font-size: 8.08cqw!important;
-    margin-bottom: 3.37cqw!important;
-    animation: unset!important;
+    font-size: 8.08cqw !important;
+    margin-bottom: 3.37cqw !important;
+    animation: unset !important;
 
     @supports not (font-size: 1cqw) {
       font-size: 72px;
@@ -87,8 +141,8 @@
   }
 
   &__text {
-    font-size: 3.59cqw!important;
-    animation: unset!important;
+    font-size: 3.59cqw !important;
+    animation: unset !important;
 
     @supports not (font-size: 1cqw) {
       font-size: 30px;

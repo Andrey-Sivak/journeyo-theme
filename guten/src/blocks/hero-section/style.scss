@@ -370,6 +370,50 @@
     }
   }
 
+  &__menu-items {
+    display: flex;
+    align-items: center;
+  }
+
+  &__menu-item {
+    font-size: 16px;
+    line-height: 1.2;
+    margin: 0 12px;
+    position: relative;
+    white-space: nowrap;
+
+    @media(min-width: 1200px) {
+      margin: 0 24px;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      width: 1px;
+      background-color: var(--jn-black);
+      height: 100%;
+      top: 0;
+      left: auto;
+      right: -12px;
+
+      @media(min-width: 1200px) {
+        right: -24px;
+      }
+    }
+
+    &:last-child {
+      margin-right: 0;
+
+      &:after {
+        content: none;
+      }
+    }
+
+    &:first-child {
+      margin-left: 0;
+    }
+  }
+
   &__content {
     position: relative;
     width: 100%;

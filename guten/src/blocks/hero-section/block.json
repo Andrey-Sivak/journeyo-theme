@@ -50,6 +50,27 @@
         "url": "",
         "alt": ""
       }
+    },
+    "menuItems": {
+      "type": "array",
+      "default": [],
+      "items": {
+        "type": "object",
+        "properties": {
+          "text": {
+            "type": "string",
+            "default": ""
+          },
+          "url": {
+            "type": "string",
+            "default": ""
+          },
+          "target": {
+            "type": "string",
+            "default": ""
+          }
+        }
+      }
     }
   },
   "supports": {

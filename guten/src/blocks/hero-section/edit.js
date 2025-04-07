@@ -1,5 +1,6 @@
 import { useBlockProps, RichText } from '@wordpress/block-editor';
 import { TextControl } from '@wordpress/components';
+import { Button } from '@wordpress/components';
 import './editor.scss';
 import { Fragment, useState } from '@wordpress/element';
 import ImageUploader from '../../utils/ImageUploader.js';
@@ -9,6 +10,7 @@ import AppStoreButton from '../../common-components/AppStoreButton.js';
 import GooglePlayButton from '../../common-components/GooglePlayButton.js';
 import InspectorPanel from './InspectorPanel.js';
 import WarnButtonFillNeed from '../../common-components/WarnButtonFillNeed.js';
+import MenuItem from './MenuItem.js';
 
 const Edit = (props) => {
 	const { attributes, setAttributes } = props;
@@ -21,6 +23,7 @@ const Edit = (props) => {
 		logo2,
 		appStoreLink,
 		googlePlayLink,
+		menuItems,
 	} = attributes;
 
 	const [isButtonFocus, setIsButtonFocus] = useState(false);
@@ -61,6 +64,30 @@ const Edit = (props) => {
 		});
 	};
 
+	const updateMenuItem = (index, fieldOrFields, value) => {
+		const updatedItems = [...menuItems];
+		if (typeof fieldOrFields === 'string') {
+			updatedItems[index] = {
+				...updatedItems[index],
+				[fieldOrFields]: value,
+			};
+		} else {
+			updatedItems[index] = { ...updatedItems[index], ...fieldOrFields };
+		}
+		setAttributes({ menuItems: updatedItems });
+	};
+
+	const addMenuItem = () => {
+		setAttributes({
+			menuItems: [...menuItems, { text: '', url: '', target: '' }],
+		});
+	};
+
+	const removeMenuItem = (index) => {
+		const newItems = menuItems.filter((_, i) => i !== index);
+		setAttributes({ menuItems: newItems });
+	};
+
 	return (
 		<Fragment>
 			<InspectorPanel
@@ -85,6 +112,26 @@ const Edit = (props) => {
 									onSelect={onSelectLogo2}
 								/>
 							</div>
+
+							<div className={`${baseClass}__menu-items`}>
+								{menuItems.map((item, index) => (
+									<MenuItem
+										key={index}
+										item={item}
+										baseClass={baseClass}
+										updateMenuItem={updateMenuItem}
+										index={index}
+									/>
+								))}
+								<Button
+									isPrimary
+									onClick={addMenuItem}
+									className="journeyo-admin-button"
+								>
+									{menuItems.length ? '+' : 'Add Item'}
+								</Button>
+							</div>
+
 							<div
 								className={`${baseClass}__header-button`}
 								onClick={() => setIsButtonFocus(true)}

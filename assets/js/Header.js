@@ -10,7 +10,9 @@ class Header {
 		if (!this.headerEl) return;
 
 		this.boundScrollHandler = this.scrollHandler.bind(this);
-		// this.menuLinks = this.headerEl.querySelectorAll('.rl-header-menu a');
+		this.menuLinks = this.headerEl.querySelectorAll(
+			'.wp-block-journeyo-hero-section__menu-items a',
+		);
 		this.boundDisplayMobMenuHandler = this.displayMobMenu.bind(this);
 		this.mobBurgerBtn = document.querySelector('.mob-burger-btn');
 		this.contactUsBtn = document.querySelector(
@@ -53,15 +55,15 @@ class Header {
 
 		window.addEventListener('click', this.closeLangsSwitcher.bind(this));
 
-		// this.menuLinks.forEach((link) => {
-		// 	link.addEventListener('click', (e) => {
-		// 		scrollToElement(e);
-		//
-		// 		if (document.body.classList.contains('mob-menu-active')) {
-		// 			document.body.classList.remove('mob-menu-active');
-		// 		}
-		// 	});
-		// });
+		this.menuLinks.forEach((link) => {
+			link.addEventListener('click', (e) => {
+				scrollToElement(e);
+
+				if (document.body.classList.contains('mob-menu-active')) {
+					document.body.classList.remove('mob-menu-active');
+				}
+			});
+		});
 	}
 
 	isHeaderHide(scrolled) {
