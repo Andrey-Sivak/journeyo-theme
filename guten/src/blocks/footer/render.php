@@ -48,7 +48,7 @@ $base_class = 'wp-block-journeyo-footer';
                             <?php foreach ($menu_items as $index => $item) : ?>
                                 <a href="<?php echo esc_url($item['url']); ?>"
                                    target="<?php echo esc_attr($item['target']); ?>"
-                                   class="<?php echo $base_class . '__menu-item'; ?>">
+                                   class="<?php echo $base_class . '__menu-item jn-animated-link jn-white'; ?>">
                                     <?php echo esc_html($item['text']); ?>
                                 </a>
                             <?php endforeach; ?>
@@ -75,14 +75,14 @@ $base_class = 'wp-block-journeyo-footer';
 
                 <div class="<?php echo $base_class . '__top-right-bottom'; ?>">
                     <?php if (!empty($privacyPolicyText)) : ?>
-                        <a href="#">
+<!--                        <a href="#" class="jn-animated-link jn-white">-->
                             <?php echo wp_kses_post($privacyPolicyText); ?>
-                        </a>
+<!--                        </a>-->
                     <?php endif; ?>
                     <?php if (!empty($termsOfUsePolicyText)) : ?>
-                        <a href="#">
+<!--                        <a href="#" class="jn-animated-link jn-white">-->
                             <?php echo wp_kses_post($termsOfUsePolicyText); ?>
-                        </a>
+<!--                        </a>-->
                     <?php endif; ?>
                 </div>
 
