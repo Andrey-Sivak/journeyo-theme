@@ -21,4 +21,12 @@
       left: 350px!important;
     }
   }
+
+  .wp-block-journeyo-promo-banner-section__image-1,
+  .wp-block-journeyo-promo-banner-section__image-2,
+  .wp-block-journeyo-promo-banner-section__location-mark path,
+  .wp-block-journeyo-promo-banner-section__arrow-svg path {
+    transform: unset !important;
+    opacity: 1 !important;
+  }
 }
